@@ -99,7 +99,7 @@ export default function Pricing() {
                   </td>
                   {pricingData.map((col) => (
                     <td key={col.plan + feature} className="py-3 px-2 text-center">
-                      {col.features[feature as keyof typeof col.features] ? "✔️" : ""}
+                      {col.features[feature as keyof typeof col.features] ? "&check;" : ""}
                     </td>
                   ))}
                 </tr>

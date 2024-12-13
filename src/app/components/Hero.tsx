@@ -17,7 +17,10 @@ export default function Hero() {
           FitWise to nowoczesna aplikacja SaaS do zarządzania obiektami sportowymi.
           Z łatwością zarządzaj rezerwacjami, członkostwami, raportami i automatyzacją.
         </p>
-        <button className="px-6 py-3 bg-blue-600 text-white rounded-md font-semibold hover:bg-blue-700 transition">
+        <button
+          className="px-6 py-3 bg-blue-600 text-white rounded-md font-semibold hover:bg-blue-700 transition"
+          aria-label="Przejdź dalej"
+        >
           Kontynuuj
         </button>
       </div>

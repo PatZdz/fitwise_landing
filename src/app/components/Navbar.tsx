@@ -25,10 +25,13 @@ export default function Navbar() {
         {/* CTA */}
         <div className="flex items-center gap-4">
           <a className="text-sm font-semibold" href="#">
-            Download app
+            Pobierz aplikację
           </a>
-          <a className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition" href="#">
-            Try it free
+          <a
+            className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
+            href="#"
+          >
+            Wypróbuj za darmo
           </a>
         </div>
       </nav>

@@ -31,7 +31,9 @@ export default function Testimonials() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
           {testimonials.map((item, index) => (
             <div key={index} className="bg-white rounded-lg p-6 shadow text-center">
-              <p className="text-gray-700 mb-4 italic">"{item.text}"</p>
+              <p className="text-gray-700 mb-4 italic">
+                &quot;{item.text}&quot;
+              </p>
               <p className="text-gray-600 font-bold">- {item.name}</p>
             </div>
           ))}

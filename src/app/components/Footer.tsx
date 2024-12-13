@@ -8,34 +8,34 @@ export default function Footer() {
         <div>
           <h3 className="font-bold mb-3">Firma</h3>
           <ul className="space-y-2 text-gray-600">
-            <li><a href="#">O nas</a></li>
-            <li><a href="#">Media</a></li>
-            <li><a href="#">Blog</a></li>
+            <li><a href="#" aria-label="O nas">O nas</a></li>
+            <li><a href="#" aria-label="Media">Media</a></li>
+            <li><a href="#" aria-label="Blog">Blog</a></li>
           </ul>
         </div>
         <div>
           <h3 className="font-bold mb-3">Produkt</h3>
           <ul className="space-y-2 text-gray-600">
-            <li><a href="#">Funkcje</a></li>
-            <li><a href="#">Cennik</a></li>
-            <li><a href="#">Integracje</a></li>
-            <li><a href="#">API</a></li>
+            <li><a href="#" aria-label="Funkcje">Funkcje</a></li>
+            <li><a href="#" aria-label="Cennik">Cennik</a></li>
+            <li><a href="#" aria-label="Integracje">Integracje</a></li>
+            <li><a href="#" aria-label="API">API</a></li>
           </ul>
         </div>
         <div>
           <h3 className="font-bold mb-3">Wsparcie</h3>
           <ul className="space-y-2 text-gray-600">
-            <li><a href="#">Kontakt</a></li>
-            <li><a href="#">Centrum pomocy</a></li>
-            <li><a href="#">Przewodniki</a></li>
+            <li><a href="#" aria-label="Kontakt">Kontakt</a></li>
+            <li><a href="#" aria-label="Centrum pomocy">Centrum pomocy</a></li>
+            <li><a href="#" aria-label="Przewodniki">Przewodniki</a></li>
           </ul>
         </div>
         <div>
           <h3 className="font-bold mb-3">Prawo</h3>
           <ul className="space-y-2 text-gray-600">
-            <li><a href="#">Polityka prywatności</a></li>
-            <li><a href="#">Warunki korzystania</a></li>
-            <li><a href="#">Polityka plików cookie</a></li>
+            <li><a href="#" aria-label="Polityka prywatności">Polityka prywatności</a></li>
+            <li><a href="#" aria-label="Warunki korzystania">Warunki korzystania</a></li>
+            <li><a href="#" aria-label="Polityka plików cookie">Polityka plików cookie</a></li>
           </ul>
         </div>
       </div>
