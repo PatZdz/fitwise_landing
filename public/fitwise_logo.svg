@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 501 85" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-3327,-1023)">
+        <g id="LogoType-transparent" serif:id="LogoType transparent" transform="matrix(1.31579,0,0,0.223158,2143.27,1210.51)">
+            <rect x="900" y="-840" width="380" height="380" style="fill:none;"/>
+            <clipPath id="_clip1">
+                <rect x="900" y="-840" width="380" height="380"/>
+            </clipPath>
+            <g clip-path="url(#_clip1)">
+                <g transform="matrix(1.19256,0,0,7.03162,668.931,-2706.92)">
+                    <g transform="matrix(1,0,0,1,-270.974,477.915)">
+                        <g transform="matrix(72,0,0,72,785.174,-158.411)">
+                        </g>
+                        <text x="532.166px" y="-158.411px" style="font-family:'FUNGIS-Bold', 'FUNGIS';font-weight:700;font-size:72px;">FitWise</text>
+                    </g>
+                    <g transform="matrix(-1.32438e-17,-0.216288,-0.216288,1.32438e-17,242.423,443.942)">
+                        <path d="M600,100C600,44.808 644.808,0 700,0C755.192,0 800,44.808 800,100L825,100C825,168.989 768.989,225 700,225C631.011,225 575,168.989 575,100L600,100Z" style="fill:rgb(89,146,255);"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
