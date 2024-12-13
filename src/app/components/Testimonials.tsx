@@ -5,26 +5,26 @@ export default function Testimonials() {
   const testimonials = [
     {
       name: "Lynette S.",
-      text: "FitWise has revolutionized our facility management!",
+      text: "FitWise zrewolucjonizował zarządzanie naszym obiektem!",
     },
     {
       name: "Dariusz K.",
-      text: "Amazing! How fast we can handle our sports facility.",
+      text: "Niesamowite! Jak szybko możemy zarządzać naszym obiektem sportowym.",
     },
     {
       name: "Susanna P.",
-      text: "Incredibly easy to use and efficient.",
+      text: "Niezwykle łatwy w użyciu i efektywny.",
     },
     {
       name: "Gabriel M.",
-      text: "Our members love the new booking system.",
+      text: "Nasi członkowie uwielbiają nowy system rezerwacji.",
     },
   ];
 
   return (
     <section className="py-16 bg-[#F9F9F9]">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-4">What Our Users Say</h2>
+        <h2 className="text-3xl font-bold text-center mb-4">Co mówią nasi użytkownicy</h2>
         <p className="text-center text-gray-600 mb-12">
           Poznaj opinie zadowolonych klientów
         </p>

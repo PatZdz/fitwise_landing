@@ -18,7 +18,7 @@ export default function Page() {
       {/* Contact section placeholder */}
       <section id="contact" className="py-16">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Get in Touch</h2>
+          <h2 className="text-3xl font-bold mb-4">W kontakcie</h2>
           <p className="text-gray-600 mb-8">Masz pytania? Skontaktuj się z nami.</p>
           <a
             href="#"

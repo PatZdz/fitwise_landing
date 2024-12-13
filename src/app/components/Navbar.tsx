@@ -18,9 +18,9 @@ export default function Navbar() {
         </div>
         {/* Menu */}
         <ul className="hidden md:flex gap-8 font-medium">
-          <li><a href="#features">Features</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#features">Funkcje</a></li>
+          <li><a href="#pricing">Cena</a></li>
+          <li><a href="#contact">Kontakt</a></li>
         </ul>
         {/* CTA */}
         <div className="flex items-center gap-4">

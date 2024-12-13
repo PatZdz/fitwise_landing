@@ -3,74 +3,74 @@ import React from "react";
 
 export default function Pricing() {
   // Zmieniamy strukturę, by była jak w Figma – kolumny: Basic, Pro, Enterprise
-  // a w wierszach features.
+  // a w wierszach funkcjonalności.
   const pricingData = [
     {
       plan: "Basic",
-      price: "$29/month",
-      cta: "Choose Basic",
+      price: "29zł/miesiąc",
+      cta: "Wybierz Basic",
       features: {
-        "Booking Management": true,
-        "Membership Management": true,
-        "Reporting & Analytics": true,
-        "Customer Support": true,
-        "Custom Integrations": false,
-        "Automations": false,
-        "User Accounts": false,
-        "Storage": true,
-        "API Access": false,
-        "Mobile App": false,
-        "Data Export": false,
-        "Custom Branding": false,
+        "Zarządzanie rezerwacjami": true,
+        "Zarządzanie członkostwami": true,
+        "Raportowanie i analityka": true,
+        "Obsługa klienta": true,
+        "Własne integracje": false,
+        "Automatyzacje": false,
+        "Konta użytkowników": false,
+        "Przestrzeń dyskowa": true,
+        "Dostęp do API": false,
+        "Aplikacja mobilna": false,
+        "Eksport danych": false,
+        "Własny branding": false,
       },
     },
     {
       plan: "Pro",
-      price: "$59/month",
-      cta: "Start with Pro",
+      price: "59zł/miesiąc",
+      cta: "Wybierz Pro",
       features: {
-        "Booking Management": true,
-        "Membership Management": true,
-        "Reporting & Analytics": true,
-        "Customer Support": true,
-        "Custom Integrations": true,
-        "Automations": true,
-        "User Accounts": true,
-        "Storage": true,
-        "API Access": true,
-        "Mobile App": true,
-        "Data Export": true,
-        "Custom Branding": false,
+        "Zarządzanie rezerwacjami": true,
+        "Zarządzanie członkostwami": true,
+        "Raportowanie i analityka": true,
+        "Obsługa klienta": true,
+        "Własne integracje": true,
+        "Automatyzacje": true,
+        "Konta użytkowników": true,
+        "Przestrzeń dyskowa": true,
+        "Dostęp do API": true,
+        "Aplikacja mobilna": true,
+        "Eksport danych": true,
+        "Własny branding": false,
       },
     },
     {
       plan: "Enterprise",
-      price: "$99/month",
-      cta: "Choose Enterprise",
+      price: "99zł/miesiąc",
+      cta: "Wybierz Enterprise",
       features: {
-        "Booking Management": true,
-        "Membership Management": true,
-        "Reporting & Analytics": true,
-        "Customer Support": true,
-        "Custom Integrations": true,
-        "Automations": true,
-        "User Accounts": true,
-        "Storage": true,
-        "API Access": true,
-        "Mobile App": true,
-        "Data Export": true,
-        "Custom Branding": true,
+        "Zarządzanie rezerwacjami": true,
+        "Zarządzanie członkostwami": true,
+        "Raportowanie i analityka": true,
+        "Obsługa klienta": true,
+        "Własne integracje": true,
+        "Automatyzacje": true,
+        "Konta użytkowników": true,
+        "Przestrzeń dyskowa": true,
+        "Dostęp do API": true,
+        "Aplikacja mobilna": true,
+        "Eksport danych": true,
+        "Własny branding": true,
       },
     },
   ];
 
-  // Lista wszystkich features w odpowiedniej kolejności
+  // Lista wszystkich funkcjonalności w odpowiedniej kolejności
   const allFeatures = Object.keys(pricingData[0].features);
 
   return (
     <section id="pricing" className="py-16 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-4">Compare plans</h2>
+        <h2 className="text-3xl font-bold text-center mb-4">Porównaj plany</h2>
         <p className="text-center text-gray-600 mb-12">
           Wybierz plan dopasowany do Twoich potrzeb
         </p>

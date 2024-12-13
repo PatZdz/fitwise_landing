@@ -10,15 +10,15 @@ export default function Hero() {
     >
       <div className="container mx-auto px-4">
         <h1 className="text-5xl font-extrabold mb-6 leading-tight">
-          Manage Your Sports <br className="hidden md:block" />
-          Facilities with Ease
+          Zarządzaj swoimi obiektami <br className="hidden md:block" />
+          sportowymi z łatwością
         </h1>
         <p className="text-lg text-gray-600 max-w-xl mx-auto mb-8">
           FitWise to nowoczesna aplikacja SaaS do zarządzania obiektami sportowymi.
           Z łatwością zarządzaj rezerwacjami, członkostwami, raportami i automatyzacją.
         </p>
         <button className="px-6 py-3 bg-blue-600 text-white rounded-md font-semibold hover:bg-blue-700 transition">
-          Continue
+          Kontynuuj
         </button>
       </div>
 

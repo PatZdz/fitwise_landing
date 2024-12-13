@@ -2,7 +2,7 @@ import './globals.css'
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "FitWise - Manage Your Sports Facilities with Ease",
+  title: "FitWise - Łatwe zarządzanie obiektami sportowymi",
   description: "Landing page FitWise SaaS.",
 };
 
