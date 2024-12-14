@@ -20,27 +20,23 @@ export default function Navbar({ isDrawerOpen, setIsDrawerOpen }: NavbarProps) {
     }
   }, [isDrawerOpen]);
 
-  // Ukrywamy/pokazujemy navbar przy scrollowaniu w dół/górę
+  // Ukrywamy/pokazujemy navbar przy scrollu w dół/górę
   useEffect(() => {
     let lastScrollY = window.scrollY;
-
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       if (currentScrollY > lastScrollY && !isDrawerOpen) {
-        // Scroll w dół -> chowamy navbar (tylko gdy drawer jest zamknięty)
         setShowNavbar(false);
       } else {
-        // Scroll w górę lub drawer otwarty -> pokazujemy navbar
         setShowNavbar(true);
       }
       lastScrollY = currentScrollY;
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isDrawerOpen]);
 
-  // Pokazujemy navbar gdy drawer jest zamknięty
+  // Jeśli Drawer jest zamknięty -> pokazuj navbar
   useEffect(() => {
     if (!isDrawerOpen) {
       setShowNavbar(true);
@@ -49,6 +45,7 @@ export default function Navbar({ isDrawerOpen, setIsDrawerOpen }: NavbarProps) {
 
   return (
     <>
+      {/* HEADER (NAVBAR) */}
       <header
         className={`fixed w-full py-4 bg-white shadow-sm transition-transform duration-300 z-50 ${
           showNavbar || isDrawerOpen ? "translate-y-0" : "-translate-y-full"
@@ -78,35 +75,26 @@ export default function Navbar({ isDrawerOpen, setIsDrawerOpen }: NavbarProps) {
             )}
           </button>
 
-          {/* Menu desktop */}
+          {/* Menu desktop (centrum) */}
           <ul className="hidden lg:flex gap-8 font-medium absolute left-1/2 -translate-x-1/2">
             <li>
-              <a
-                href="#features"
-                className="hover:text-primary transition-colors"
-              >
+              <a href="#features" className="hover:text-primary transition-colors">
                 Funkcje
               </a>
             </li>
             <li>
-              <a
-                href="#pricing"
-                className="hover:text-primary transition-colors"
-              >
+              <a href="#pricing" className="hover:text-primary transition-colors">
                 Cena
               </a>
             </li>
             <li>
-              <a
-                href="#contact"
-                className="hover:text-primary transition-colors"
-              >
+              <a href="#contact" className="hover:text-primary transition-colors">
                 Kontakt
               </a>
             </li>
           </ul>
 
-          {/* CTA desktop */}
+          {/* CTA desktop (prawa strona) */}
           <div className="hidden lg:flex items-center gap-4">
             <a className="text-sm font-semibold" href="#">
               Pobierz aplikację
@@ -115,16 +103,20 @@ export default function Navbar({ isDrawerOpen, setIsDrawerOpen }: NavbarProps) {
               Wypróbuj za darmo
             </a>
           </div>
+        </nav>
+      </header>
 
-          {/* Drawer Menu */}
+      {/* DRAWER i OVERLAY - rodzeństwo headera */}
+      {isDrawerOpen && (
+        <>
+          {/* Drawer (z-index 100) */}
           <div
-            className={`
-              fixed top-0 right-0 h-screen w-64 bg-white shadow-lg z-[100] flex flex-col
+            className={`fixed top-0 right-0 h-screen w-64 bg-white shadow-lg z-[100] flex flex-col
               transform transition-transform duration-300 ease-in-out lg:hidden
               ${isDrawerOpen ? "translate-x-0" : "translate-x-full"}
             `}
           >
-            {/* Ikona zamykania */}
+            {/* Ikona zamykania (z-index 110) */}
             <button
               className="absolute top-4 right-4 z-[110]"
               onClick={() => setIsDrawerOpen(false)}
@@ -176,15 +168,13 @@ export default function Navbar({ isDrawerOpen, setIsDrawerOpen }: NavbarProps) {
             </div>
           </div>
 
-          {/* Overlay */}
-          {isDrawerOpen && (
-            <div
-              className="fixed inset-0 bg-black bg-opacity-50 z-[90] lg:hidden"
-              onClick={() => setIsDrawerOpen(false)}
-            />
-          )}
-        </nav>
-      </header>
+          {/* Overlay (z-index 90) */}
+          <div
+            className="fixed inset-0 bg-black bg-opacity-50 z-[90] lg:hidden"
+            onClick={() => setIsDrawerOpen(false)}
+          />
+        </>
+      )}
     </>
   );
 }

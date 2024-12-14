@@ -20,14 +20,6 @@ export default function Page() {
       <Pricing />
       <Contact />
       <Footer />
-      
-      {/* Overlay */}
-      {isDrawerOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-[90] lg:hidden"
-          onClick={() => setIsDrawerOpen(false)}
-        />
-      )}
     </>
   );
 }
