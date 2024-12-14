@@ -157,7 +157,7 @@ export default function Navbar({ isDrawerOpen, setIsDrawerOpen }: NavbarProps) {
                 </ul>
               </div>
 
-              <div className="px-6 pb-16 flex flex-col items-center">
+              <div className="px-6 pb-60 flex flex-col items-center">
                 <a href="#" className="block text-center py-3 font-semibold">
                   Pobierz aplikację
                 </a>
