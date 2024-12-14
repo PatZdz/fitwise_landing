@@ -54,45 +54,44 @@ export default function Navbar() {
           className={`fixed top-0 right-0 h-screen w-64 bg-white shadow-lg
             transform transition-transform duration-300 ease-in-out md:hidden
             ${isDrawerOpen ? 'translate-x-0' : 'translate-x-full'}
-            z-40 overflow-y-auto`}
+            z-40 overflow-y-auto flex flex-col`}
         >
-          {/* Zmniejszony padding top, żeby CTA nie zjeżdżało za nisko */}
-          <div className="flex flex-col min-h-screen pt-16 pb-6">
-            <ul className="flex-1">
+          {/* Trochę mniejszy padding u góry */}
+          <div className="pt-12 px-6 flex-1">
+            <ul>
               <li>
-                <a href="#features" className="block px-6 py-3 hover:bg-gray-50">
+                <a href="#features" className="block py-3 hover:bg-gray-50">
                   Funkcje
                 </a>
               </li>
               <li>
-                <a href="#pricing" className="block px-6 py-3 hover:bg-gray-50">
+                <a href="#pricing" className="block py-3 hover:bg-gray-50">
                   Cena
                 </a>
               </li>
               <li>
-                <a href="#contact" className="block px-6 py-3 hover:bg-gray-50">
+                <a href="#contact" className="block py-3 hover:bg-gray-50">
                   Kontakt
                 </a>
               </li>
-              {/* Usuwamy li z "Pobierz aplikację" z listy */}
             </ul>
+          </div>
 
-            {/* CTA w dolnej części drawer */}
-            <div className="px-6 flex flex-col gap-3">
-              <a href="#" className="block text-center py-3 font-semibold">
-                Pobierz aplikację
-              </a>
-              <a href="#" className="block text-center btn-cta py-3">
-                Wypróbuj za darmo
-              </a>
-            </div>
+          {/* CTA na samym dole drawer, niewielki padding dolny */}
+          <div className="px-6 pb-6">
+            <a href="#" className="block text-center py-3 font-semibold">
+              Pobierz aplikację
+            </a>
+            <a href="#" className="block text-center btn-cta py-3">
+              Wypróbuj za darmo
+            </a>
           </div>
         </div>
 
         {/* Overlay */}
         {isDrawerOpen && (
           <div
-            className="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-50 z-30 md:hidden"
+            className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"
             onClick={() => setIsDrawerOpen(false)}
           />
         )}
