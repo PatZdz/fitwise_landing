@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   return (
     <header className="w-full py-4 bg-white shadow-sm relative">
@@ -22,10 +22,10 @@ export default function Navbar() {
 
         {/* Menu hamburger dla mobile */}
         <button
-          className="md:hidden"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="md:hidden z-50"
+          onClick={() => setIsDrawerOpen(!isDrawerOpen)}
         >
-          {isMenuOpen ? (
+          {isDrawerOpen ? (
             <XMarkIcon className="h-6 w-6" />
           ) : (
             <Bars3Icon className="h-6 w-6" />
@@ -52,21 +52,33 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Menu mobilne */}
-        {isMenuOpen && (
-          <div className="absolute top-full left-0 right-0 bg-white shadow-lg md:hidden">
-            <ul className="flex flex-col py-4">
-              <li><a href="#features" className="block px-4 py-2">Funkcje</a></li>
-              <li><a href="#pricing" className="block px-4 py-2">Cena</a></li>
-              <li><a href="#contact" className="block px-4 py-2">Kontakt</a></li>
-              <li><a href="#" className="block px-4 py-2">Pobierz aplikację</a></li>
-              <li>
-                <a href="#" className="block mx-4 my-2 text-center btn-cta">
-                  Wypróbuj za darmo
-                </a>
-              </li>
+        {/* Drawer Menu */}
+        <div 
+          className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out md:hidden ${
+            isDrawerOpen ? 'translate-x-0' : 'translate-x-full'
+          } z-40`}
+        >
+          <div className="flex flex-col h-full pt-20 pb-6">
+            <ul className="flex-1">
+              <li><a href="#features" className="block px-6 py-3 hover:bg-gray-50">Funkcje</a></li>
+              <li><a href="#pricing" className="block px-6 py-3 hover:bg-gray-50">Cena</a></li>
+              <li><a href="#contact" className="block px-6 py-3 hover:bg-gray-50">Kontakt</a></li>
+              <li><a href="#" className="block px-6 py-3 hover:bg-gray-50">Pobierz aplikację</a></li>
             </ul>
+            <div className="px-6">
+              <a href="#" className="block text-center btn-cta py-3">
+                Wypróbuj za darmo
+              </a>
+            </div>
           </div>
+        </div>
+
+        {/* Overlay */}
+        {isDrawerOpen && (
+          <div 
+            className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"
+            onClick={() => setIsDrawerOpen(false)}
+          />
         )}
       </nav>
     </header>
