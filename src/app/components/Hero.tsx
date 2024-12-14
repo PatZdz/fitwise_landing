@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section
       className="relative w-full bg-gradient-to-b from-white via-[#F1F5FA] to-[#F7F8FA] 
-                 pt-16 pb-24 flex flex-col items-center text-center"
+                 pt-32 pb-24 flex flex-col items-center text-center"
     >
       <div className="container mx-auto px-4">
         <h1 className="text-5xl font-extrabold mb-6 leading-tight">

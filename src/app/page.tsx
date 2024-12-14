@@ -24,7 +24,7 @@ export default function Page() {
       {/* Overlay */}
       {isDrawerOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"
+          className="fixed inset-0 bg-black bg-opacity-50 z-[90] lg:hidden"
           onClick={() => setIsDrawerOpen(false)}
         />
       )}
