@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { CheckIcon } from '@heroicons/react/24/solid';
 
 export default function Pricing() {
   // Zmieniamy strukturę, by była jak w Figma – kolumny: Basic, Pro, Enterprise
@@ -99,7 +100,9 @@ export default function Pricing() {
                   </td>
                   {pricingData.map((col) => (
                     <td key={col.plan + feature} className="py-3 px-2 text-center">
-                      {col.features[feature as keyof typeof col.features] ? "&check;" : ""}
+                      {col.features[feature as keyof typeof col.features] ? (
+                        <CheckIcon className="h-5 w-5 text-green-500 mx-auto inline-block" />
+                      ) : null}
                     </td>
                   ))}
                 </tr>
