@@ -54,18 +54,35 @@ export default function Navbar() {
 
         {/* Drawer Menu */}
         <div 
-          className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out md:hidden ${
-            isDrawerOpen ? 'translate-x-0' : 'translate-x-full'
-          } z-40`}
+          className={`fixed top-0 right-0 h-screen w-64 bg-white shadow-lg
+            transform transition-transform duration-300 ease-in-out md:hidden
+            ${isDrawerOpen ? 'translate-x-0' : 'translate-x-full'}
+            z-40 overflow-y-auto`}
         >
-          <div className="flex flex-col h-full pt-20 pb-6">
+          <div className="flex flex-col min-h-screen pt-20 pb-6">
             <ul className="flex-1">
-              <li><a href="#features" className="block px-6 py-3 hover:bg-gray-50">Funkcje</a></li>
-              <li><a href="#pricing" className="block px-6 py-3 hover:bg-gray-50">Cena</a></li>
-              <li><a href="#contact" className="block px-6 py-3 hover:bg-gray-50">Kontakt</a></li>
-              <li><a href="#" className="block px-6 py-3 hover:bg-gray-50">Pobierz aplikację</a></li>
+              <li>
+                <a href="#features" className="block px-6 py-3 hover:bg-gray-50">
+                  Funkcje
+                </a>
+              </li>
+              <li>
+                <a href="#pricing" className="block px-6 py-3 hover:bg-gray-50">
+                  Cena
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="block px-6 py-3 hover:bg-gray-50">
+                  Kontakt
+                </a>
+              </li>
+              {/* Usuwamy li z "Pobierz aplikację" z listy */}
             </ul>
-            <div className="px-6">
+            <div className="px-6 flex flex-col gap-3">
+              {/* Dodajemy link „Pobierz aplikację” nad buttonem */}
+              <a href="#" className="block text-center py-3 font-semibold">
+                Pobierz aplikację
+              </a>
               <a href="#" className="block text-center btn-cta py-3">
                 Wypróbuj za darmo
               </a>
