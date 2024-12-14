@@ -44,22 +44,20 @@ export default function Navbar() {
           <a className="text-sm font-semibold" href="#">
             Pobierz aplikację
           </a>
-          <a
-            className="btn-cta"
-            href="#"
-          >
+          <a className="btn-cta" href="#">
             Wypróbuj za darmo
           </a>
         </div>
 
         {/* Drawer Menu */}
-        <div 
+        <div
           className={`fixed top-0 right-0 h-screen w-64 bg-white shadow-lg
             transform transition-transform duration-300 ease-in-out md:hidden
             ${isDrawerOpen ? 'translate-x-0' : 'translate-x-full'}
             z-40 overflow-y-auto`}
         >
-          <div className="flex flex-col min-h-screen pt-20 pb-6">
+          {/* Zmniejszony padding top, żeby CTA nie zjeżdżało za nisko */}
+          <div className="flex flex-col min-h-screen pt-16 pb-6">
             <ul className="flex-1">
               <li>
                 <a href="#features" className="block px-6 py-3 hover:bg-gray-50">
@@ -78,8 +76,9 @@ export default function Navbar() {
               </li>
               {/* Usuwamy li z "Pobierz aplikację" z listy */}
             </ul>
+
+            {/* CTA w dolnej części drawer */}
             <div className="px-6 flex flex-col gap-3">
-              {/* Dodajemy link „Pobierz aplikację” nad buttonem */}
               <a href="#" className="block text-center py-3 font-semibold">
                 Pobierz aplikację
               </a>
@@ -92,8 +91,8 @@ export default function Navbar() {
 
         {/* Overlay */}
         {isDrawerOpen && (
-          <div 
-            className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"
+          <div
+            className="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-50 z-30 md:hidden"
             onClick={() => setIsDrawerOpen(false)}
           />
         )}
