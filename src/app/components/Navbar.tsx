@@ -1,101 +1,190 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
-export default function Navbar() {
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+interface NavbarProps {
+  isDrawerOpen: boolean;
+  setIsDrawerOpen: (isOpen: boolean) => void;
+}
+
+export default function Navbar({ isDrawerOpen, setIsDrawerOpen }: NavbarProps) {
+  const [showNavbar, setShowNavbar] = useState(true);
+
+  // Blokujemy przewijanie body, gdy drawer jest otwarty
+  useEffect(() => {
+    if (isDrawerOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [isDrawerOpen]);
+
+  // Ukrywamy/pokazujemy navbar przy scrollowaniu w dół/górę
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY && !isDrawerOpen) {
+        // Scroll w dół -> chowamy navbar (tylko gdy drawer jest zamknięty)
+        setShowNavbar(false);
+      } else {
+        // Scroll w górę lub drawer otwarty -> pokazujemy navbar
+        setShowNavbar(true);
+      }
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isDrawerOpen]);
+
+  // Pokazujemy navbar gdy drawer jest zamknięty
+  useEffect(() => {
+    if (!isDrawerOpen) {
+      setShowNavbar(true);
+    }
+  }, [isDrawerOpen]);
 
   return (
-    <header className="w-full py-4 bg-white shadow-sm relative">
-      <nav className="container mx-auto px-4 flex items-center justify-between">
-        {/* Logo */}
-        <div className="flex items-center gap-2">
-          <Image
-            src="/fitwise_logo.svg"
-            alt="FitWise Logo"
-            width={120}
-            height={40}
-            priority
-          />
-        </div>
-
-        {/* Menu hamburger dla mobile */}
-        <button
-          className="md:hidden z-50"
-          onClick={() => setIsDrawerOpen(!isDrawerOpen)}
-        >
-          {isDrawerOpen ? (
-            <XMarkIcon className="h-6 w-6" />
-          ) : (
-            <Bars3Icon className="h-6 w-6" />
-          )}
-        </button>
-
-        {/* Menu desktop */}
-        <ul className="hidden md:flex gap-8 font-medium absolute left-1/2 -translate-x-1/2">
-          <li><a href="#features" className="hover:text-primary transition-colors">Funkcje</a></li>
-          <li><a href="#pricing" className="hover:text-primary transition-colors">Cena</a></li>
-          <li><a href="#contact" className="hover:text-primary transition-colors">Kontakt</a></li>
-        </ul>
-
-        {/* CTA desktop */}
-        <div className="hidden md:flex items-center gap-4">
-          <a className="text-sm font-semibold" href="#">
-            Pobierz aplikację
-          </a>
-          <a className="btn-cta" href="#">
-            Wypróbuj za darmo
-          </a>
-        </div>
-
-        {/* Drawer Menu */}
-        <div
-          className={`fixed top-0 right-0 h-screen w-64 bg-white shadow-lg
-            transform transition-transform duration-300 ease-in-out md:hidden
-            ${isDrawerOpen ? 'translate-x-0' : 'translate-x-full'}
-            z-40 overflow-y-auto flex flex-col`}
-        >
-          {/* Trochę mniejszy padding u góry */}
-          <div className="pt-12 px-6 flex-1">
-            <ul>
-              <li>
-                <a href="#features" className="block py-3 text-center text-lg hover:bg-gray-50">
-                  Funkcje
-                </a>
-              </li>
-              <li>
-                <a href="#pricing" className="block py-3 text-center text-lg hover:bg-gray-50">
-                  Cena
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="block py-3 text-center text-lg hover:bg-gray-50">
-                  Kontakt
-                </a>
-              </li>
-            </ul>
+    <>
+      <header
+        className={`fixed w-full py-4 bg-white shadow-sm transition-transform duration-300 z-50 ${
+          showNavbar || isDrawerOpen ? "translate-y-0" : "-translate-y-full"
+        }`}
+      >
+        <nav className="container mx-auto px-4 flex items-center justify-between">
+          {/* Logo */}
+          <div className="flex items-center gap-2">
+            <Image
+              src="/fitwise_logo.svg"
+              alt="FitWise Logo"
+              width={120}
+              height={40}
+              priority
+            />
           </div>
 
-          {/* CTA na samym dole drawer, większy padding dolny */}
-          <div className="px-6 pb-36 flex flex-col items-center">
-            <a href="#" className="block text-center py-3 font-semibold">
+          {/* Menu hamburger dla mobile */}
+          <button
+            className="lg:hidden z-50"
+            onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+          >
+            {isDrawerOpen ? (
+              <XMarkIcon className="h-6 w-6 transition-opacity duration-300" />
+            ) : (
+              <Bars3Icon className="h-6 w-6 transition-opacity duration-300" />
+            )}
+          </button>
+
+          {/* Menu desktop */}
+          <ul className="hidden lg:flex gap-8 font-medium absolute left-1/2 -translate-x-1/2">
+            <li>
+              <a
+                href="#features"
+                className="hover:text-primary transition-colors"
+              >
+                Funkcje
+              </a>
+            </li>
+            <li>
+              <a
+                href="#pricing"
+                className="hover:text-primary transition-colors"
+              >
+                Cena
+              </a>
+            </li>
+            <li>
+              <a
+                href="#contact"
+                className="hover:text-primary transition-colors"
+              >
+                Kontakt
+              </a>
+            </li>
+          </ul>
+
+          {/* CTA desktop */}
+          <div className="hidden lg:flex items-center gap-4">
+            <a className="text-sm font-semibold" href="#">
               Pobierz aplikację
             </a>
-            <a href="#" className="block text-center btn-cta py-3">
+            <a className="btn-cta" href="#">
               Wypróbuj za darmo
             </a>
           </div>
-        </div>
 
-        {/* Overlay */}
-        {isDrawerOpen && (
+          {/* Drawer Menu */}
           <div
-            className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"
-            onClick={() => setIsDrawerOpen(false)}
-          />
-        )}
-      </nav>
-    </header>
+            className={`
+              fixed top-0 right-0 h-screen w-64 bg-white shadow-lg z-[100] flex flex-col
+              transform transition-transform duration-300 ease-in-out lg:hidden
+              ${isDrawerOpen ? "translate-x-0" : "translate-x-full"}
+            `}
+          >
+            {/* Ikona zamykania */}
+            <button
+              className="absolute top-4 right-4 z-[110]"
+              onClick={() => setIsDrawerOpen(false)}
+            >
+              <XMarkIcon className="h-6 w-6 text-black" />
+            </button>
+
+            <div className="mt-16 flex-1 flex flex-col justify-between">
+              <div className="px-6">
+                <ul>
+                  <li>
+                    <a
+                      href="#features"
+                      className="block py-3 text-center text-lg hover:bg-gray-50"
+                      onClick={() => setIsDrawerOpen(false)}
+                    >
+                      Funkcje
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#pricing"
+                      className="block py-3 text-center text-lg hover:bg-gray-50"
+                      onClick={() => setIsDrawerOpen(false)}
+                    >
+                      Cena
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#contact"
+                      className="block py-3 text-center text-lg hover:bg-gray-50"
+                      onClick={() => setIsDrawerOpen(false)}
+                    >
+                      Kontakt
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="px-6 pb-16 flex flex-col items-center">
+                <a href="#" className="block text-center py-3 font-semibold">
+                  Pobierz aplikację
+                </a>
+                <a href="#" className="block text-center btn-cta py-3">
+                  Wypróbuj za darmo
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Overlay */}
+          {isDrawerOpen && (
+            <div
+              className="fixed inset-0 bg-black bg-opacity-50 z-[90] lg:hidden"
+              onClick={() => setIsDrawerOpen(false)}
+            />
+          )}
+        </nav>
+      </header>
+    </>
   );
 }
