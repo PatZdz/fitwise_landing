@@ -33,10 +33,10 @@ export default function Navbar() {
         </button>
 
         {/* Menu desktop */}
-        <ul className="hidden md:flex gap-8 font-medium">
-          <li><a href="#features">Funkcje</a></li>
-          <li><a href="#pricing">Cena</a></li>
-          <li><a href="#contact">Kontakt</a></li>
+        <ul className="hidden md:flex gap-8 font-medium absolute left-1/2 -translate-x-1/2">
+          <li><a href="#features" className="hover:text-primary transition-colors">Funkcje</a></li>
+          <li><a href="#pricing" className="hover:text-primary transition-colors">Cena</a></li>
+          <li><a href="#contact" className="hover:text-primary transition-colors">Kontakt</a></li>
         </ul>
 
         {/* CTA desktop */}
@@ -60,25 +60,25 @@ export default function Navbar() {
           <div className="pt-12 px-6 flex-1">
             <ul>
               <li>
-                <a href="#features" className="block py-3 hover:bg-gray-50">
+                <a href="#features" className="block py-3 text-center text-lg hover:bg-gray-50">
                   Funkcje
                 </a>
               </li>
               <li>
-                <a href="#pricing" className="block py-3 hover:bg-gray-50">
+                <a href="#pricing" className="block py-3 text-center text-lg hover:bg-gray-50">
                   Cena
                 </a>
               </li>
               <li>
-                <a href="#contact" className="block py-3 hover:bg-gray-50">
+                <a href="#contact" className="block py-3 text-center text-lg hover:bg-gray-50">
                   Kontakt
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* CTA na samym dole drawer, niewielki padding dolny */}
-          <div className="px-6 pb-6">
+          {/* CTA na samym dole drawer, większy padding dolny */}
+          <div className="px-6 pb-36 flex flex-col items-center">
             <a href="#" className="block text-center py-3 font-semibold">
               Pobierz aplikację
             </a>
