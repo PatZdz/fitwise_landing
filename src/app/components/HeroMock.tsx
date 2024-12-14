@@ -7,7 +7,7 @@ export default function HeroMock() {
       {/* Góra karty: logo FitWise z lewej, przycisk "Sprawdź demo FitWise" z prawej */}
       <div className="flex items-center justify-between mb-8">
         <span className="text-xl font-bold text-gray-700">FitWise</span>
-        <button className="px-4 py-2 bg-blue-600 text-white rounded-md font-semibold hover:bg-blue-700 transition">
+        <button className="px-4 py-2 bg-primary text-white rounded-md font-semibold hover:bg-primary/90 transition">
           Sprawdź demo FitWise
         </button>
       </div>

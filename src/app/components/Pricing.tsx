@@ -1,10 +1,8 @@
 "use client";
 import React from "react";
-import { CheckIcon } from '@heroicons/react/24/solid';
+import { CheckIcon } from "@heroicons/react/24/solid";
 
 export default function Pricing() {
-  // Zmieniamy strukturę, by była jak w Figma – kolumny: Basic, Pro, Enterprise
-  // a w wierszach funkcjonalności.
   const pricingData = [
     {
       plan: "Basic",
@@ -82,10 +80,13 @@ export default function Pricing() {
               <tr className="bg-[#F7F8FA]">
                 <th className="py-4 px-2 text-left"></th>
                 {pricingData.map((col) => (
-                  <th key={col.plan} className="py-4 px-2 text-center font-semibold">
+                  <th
+                    key={col.plan}
+                    className="py-4 px-2 text-center font-semibold"
+                  >
                     <div className="mb-2 text-xl">{col.plan}</div>
                     <div className="text-2xl font-bold mb-2">{col.price}</div>
-                    <button className="bg-blue-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-blue-700 transition">
+                    <button className="bg-primary text-white px-4 py-2 rounded-md font-semibold hover:bg-primary/90 transition">
                       {col.cta}
                     </button>
                   </th>
@@ -99,7 +100,10 @@ export default function Pricing() {
                     {feature}
                   </td>
                   {pricingData.map((col) => (
-                    <td key={col.plan + feature} className="py-3 px-2 text-center">
+                    <td
+                      key={col.plan + feature}
+                      className="py-3 px-2 text-center"
+                    >
                       {col.features[feature as keyof typeof col.features] ? (
                         <CheckIcon className="h-5 w-5 text-green-500 mx-auto inline-block" />
                       ) : null}

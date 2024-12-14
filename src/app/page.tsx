@@ -22,9 +22,9 @@ export default function Page() {
           <p className="text-gray-600 mb-8">Masz pytania? Skontaktuj się z nami.</p>
           <a
             href="#"
-            className="px-6 py-3 bg-blue-600 text-white rounded-md font-semibold hover:bg-blue-700 transition"
+            className="px-6 py-3 bg-primary text-white rounded-md font-semibold hover:bg-primary/90 transition"
           >
-            Contact Us
+            Napisz do nas
           </a>
         </div>
       </section>
