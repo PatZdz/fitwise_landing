@@ -36,10 +36,11 @@ export default function Hero() {
         </div>
         {/* Image */}
         <div className="w-full h-auto">
-          {/* Use <img> for SVG or if you face issues with Image component */}
-          <img
-            src="/dashboard.jpg" // Ensure the path and extension are correct
+          <Image
+            src="/dashboard.jpg"
             alt="Zrzut ekranu z aplikacji FitWise"
+            width={800}
+            height={450}
             className="w-full h-auto"
           />
         </div>
