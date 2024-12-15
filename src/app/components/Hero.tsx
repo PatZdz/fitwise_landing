@@ -1,11 +1,11 @@
 "use client";
 import React from "react";
-import HeroMock from "./HeroMock";
+import Image from "next/image";
 
 export default function Hero() {
   return (
     <section
-      className="relative w-full bg-gradient-to-b from-white via-[#F1F5FA] to-[#F7F8FA] 
+      className="relative w-full bg-gradient-to-b from-white via-[#F1F5FA] to-[#e3e4e6]
                  pt-32 pb-24 flex flex-col items-center text-center"
     >
       <div className="container mx-auto px-4">
@@ -25,9 +25,25 @@ export default function Hero() {
         </button>
       </div>
 
-      {/* Makieta / mock kontenera aplikacji, umieszczona niżej */}
-      <div className="container mx-auto px-4 mt-16">
-        <HeroMock />
+      {/* Dodana zawartość z HeroMock */}
+      <div className="bg-white w-full max-w-4xl mx-auto rounded-lg shadow-lg relative p-6 md:p-8 mt-16">
+        {/* Góra karty: logo FitWise z lewej, przycisk "Sprawdź demo FitWise" z prawej */}
+        <div className="flex items-center justify-between mb-8">
+          <span className="text-xl font-bold text-gray-700">Wszystko w jednym miejscu</span>
+          <button className="px-4 py-2 bg-primary text-white rounded-md font-semibold hover:bg-primary/90 transition">
+            Sprawdź demo FitWise
+          </button>
+        </div>
+        {/* Obrazek dashboard.svg */}
+        <div className="w-full h-auto">
+          <Image
+            src="/dashboard.svg"
+            alt="Zrzut ekranu z aplikacji FitWise"
+            width={800}
+            height={450}
+            className="w-full h-auto"
+          />
+        </div>
       </div>
     </section>
   );
