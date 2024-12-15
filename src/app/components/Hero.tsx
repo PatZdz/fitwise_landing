@@ -28,7 +28,7 @@ export default function Hero() {
       {/* Dodana zawartość z HeroMock */}
       <div className="bg-white w-full max-w-4xl mx-auto rounded-lg shadow-lg relative p-6 md:p-8 mt-16">
         {/* Header */}
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-0 mb-8">
           <span className="text-xl font-bold text-gray-700">Wszystko w jednym miejscu</span>
           <button className="px-4 py-2 bg-primary text-white rounded-md font-semibold hover:bg-primary/90 transition">
             Sprawdź demo FitWise
@@ -44,7 +44,6 @@ export default function Hero() {
             className="w-full h-auto"
           />
         </div>
-      </div>
-    </section>
+      </div>    </section>
   );
 }
