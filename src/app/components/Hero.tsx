@@ -27,22 +27,20 @@ export default function Hero() {
 
       {/* Dodana zawartość z HeroMock */}
       <div className="bg-white w-full max-w-4xl mx-auto rounded-lg shadow-lg relative p-6 md:p-8 mt-16">
-        {/* Góra karty: logo FitWise z lewej, przycisk "Sprawdź demo FitWise" z prawej */}
+        {/* Header */}
         <div className="flex items-center justify-between mb-8">
-          <span className="text-xl font-bold text-gray-700">Wszystko w jednym miejscu</span>
+          <span className="text-xl font-bold text-gray-700">FitWise</span>
           <button className="px-4 py-2 bg-primary text-white rounded-md font-semibold hover:bg-primary/90 transition">
             Sprawdź demo FitWise
           </button>
         </div>
-        {/* Obrazek dashboard.svg */}
+        {/* Image */}
         <div className="w-full h-auto">
-          <Image
-            src="/dashboard.jpg"
+          {/* Use <img> for SVG or if you face issues with Image component */}
+          <img
+            src="/dashboard.jpg" // Ensure the path and extension are correct
             alt="Zrzut ekranu z aplikacji FitWise"
-            width={800}
-            height={450}
             className="w-full h-auto"
-            priority
           />
         </div>
       </div>
