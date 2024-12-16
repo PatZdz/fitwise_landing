@@ -37,7 +37,7 @@ export default function Hero() {
         {/* Image */}
         <div className="w-full h-auto">
           <Image
-            src="/dashboard.jpg"
+            src="/dashboard.svg"
             alt="Zrzut ekranu z aplikacji FitWise"
             width={800}
             height={450}
