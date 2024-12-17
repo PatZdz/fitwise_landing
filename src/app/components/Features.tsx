@@ -25,10 +25,10 @@ export default function Features() {
             {/* Górna część: tytuł + opis z wewnętrznym paddingiem */}
             <div className="p-6" /* p-6 tylko na górnej sekcji */>
               <h3 id="feature-1-title" className="font-semibold text-xl mb-2">
-                Funkcja 1
+                Szybkie tworzenie zajęć
               </h3>
               <p className="text-gray-600">
-                Łatwe zarządzanie rezerwacjami i harmonogramami.
+                Błyskawicznie stwórz dowolne zajęcia, dodaj klientów i przydziel trenera.
               </p>
             </div>
 
@@ -52,10 +52,10 @@ export default function Features() {
           >
             <div className="p-6">
               <h3 id="feature-2-title" className="font-semibold text-xl mb-2">
-                Funkcja 2
+                Łatwe sprawdzanie obecności
               </h3>
               <p className="text-gray-600">
-                Bezproblemowe śledzenie i zarządzanie członkostwami.
+                Koniec z choasem i zapisywaniem w notatniku. Sprawdź obecność w ciągu kilku sekund.
               </p>
             </div>
             <div className="relative w-full h-80 overflow-hidden rounded-b-lg">
@@ -77,10 +77,10 @@ export default function Features() {
           >
             <div className="p-6">
               <h3 id="feature-3-title" className="font-semibold text-xl mb-2">
-                Funkcja 3
+                Zarządzaj pracownikami i klientami
               </h3>
               <p className="text-gray-600">
-                Generowanie szczegółowych raportów i analiz.
+                Wszystko widoczne, w jednym miejscu. Dodawaj uprawnienia, rozliczaj i śledź ich ilości zajęć.
               </p>
             </div>
             <div className="relative w-full h-80 overflow-hidden rounded-b-lg">
@@ -102,10 +102,10 @@ export default function Features() {
           >
             <div className="p-6">
               <h3 id="feature-4-title" className="font-semibold text-xl mb-2">
-                Funkcja 4
+                Przejrzysty kalendarz
               </h3>
               <p className="text-gray-600">
-                Automatyzacja zadań związanych z zarządzaniem obiektami.
+                Trzymaj rękę na pulsie i twórz zajęcia z wyprzedzeniem w kilka kliknięć.
               </p>
             </div>
             <div className="relative w-full h-80 overflow-hidden rounded-b-lg">
