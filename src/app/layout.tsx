@@ -4,7 +4,7 @@ import './globals.css'
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'FitWise - Twój Partner w Zdrowym Stylu Życia',
+  title: 'FitWise - Łatwe zarządzanie obiektami sportowymi',
   description: 'Osiągnij swoje cele fitness z FitWise.',
 };export default function RootLayout({
   children,
