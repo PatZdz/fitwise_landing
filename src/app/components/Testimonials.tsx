@@ -34,11 +34,6 @@ export default function Testimonials() {
     },
   ];
 
-  const doubledTestimonials = testimonials.map((item, index) => ({
-    ...item,
-    id: index < testimonials.length ? item.id : `${item.id}_duplicate`
-  }));
-
   return (
     <section className="py-16 bg-[#F9F9F9] overflow-hidden">
       <div className="container mx-auto px-4">
