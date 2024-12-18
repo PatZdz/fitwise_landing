@@ -6,49 +6,49 @@ export default function Testimonials() {
     {
       name: "Lynette S.",
       role: "Manager Obiektu",
-      avatar: "/images/avatar-lynette.jpg",
+      avatar: "/images/testimonial_1.jpg",
       text: "FitWise zrewolucjonizował zarządzanie naszym obiektem!",
     },
     {
       name: "Dariusz K.",
       role: "Operations Director",
-      avatar: "/images/avatar-dariusz.jpg",
+      avatar: "/images/testimonial_2.jpg",
       text: "Niesamowite! Jak szybko możemy zarządzać naszym obiektem sportowym.",
     },
     {
       name: "Susanna P.",
       role: "Kierownik Recepcji",
-      avatar: "/images/avatar-susanna.jpg",
+      avatar: "/images/testimonial_3.jpg",
       text: "Niezwykle łatwy w użyciu i efektywny.",
     },
     {
       name: "Gabriel M.",
       role: "Koordynator Sprzedaży",
-      avatar: "/images/avatar-gabriel.jpg",
+      avatar: "/images/testimonial_4.jpg",
       text: "Nasi członkowie uwielbiają nowy system rezerwacji.",
     },
     {
       name: "Adam W.",
       role: "Trener Personalny",
-      avatar: "/images/avatar-adam.jpg",
+      avatar: "/images/testimonial_5.jpg",
       text: "Integracja z systemem zajęła dosłownie kilka minut!",
     },
     {
       name: "Marzena R.",
       role: "Koordynator Siłowni",
-      avatar: "/images/avatar-marzena.jpg",
+      avatar: "/images/testimonial_6.jpg",
       text: "Fantastyczny support i ciągłe aktualizacje.",
     },
     {
       name: "Krzysztof B.",
       role: "Specjalista ds. Sprzedaży",
-      avatar: "/images/avatar-krzysztof.jpg",
+      avatar: "/images/testimonial_7.jpg",
       text: "Zdecydowanie usprawniło naszą pracę.",
     },
     {
       name: "Eliza T.",
       role: "Recepcjonistka",
-      avatar: "/images/avatar-eliza.jpg",
+      avatar: "/images/testimonial_8.jpg",
       text: "Klienci uwielbiają prostotę rezerwowania miejsc.",
     },
   ];
@@ -70,7 +70,7 @@ export default function Testimonials() {
                 key={index}
                 className="flex-none bg-white rounded-lg p-6 shadow w-64"
               >
-                <div className="flex items-center mb-4">
+                <div className="flex items-start mb-4">
                   <div className="w-12 h-12 rounded-full overflow-hidden mr-4 bg-gray-200 flex-shrink-0">
                     {item.avatar && (
                       <img
@@ -80,12 +80,11 @@ export default function Testimonials() {
                       />
                     )}
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <p className="text-lg font-bold text-gray-900">{item.name}</p>
                     {item.role && (
                       <p className="text-sm text-gray-500">{item.role}</p>
                     )}
-                    {/* 6 gwiazdek */}
                     <div className="mt-1">
                       {Array(6)
                         .fill(null)

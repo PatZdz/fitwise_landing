@@ -9,7 +9,7 @@ export default function Info_3() {
         {/* Lewa kolumna - obrazek */}
         <div className="w-full md:w-1/2 mb-8 md:mb-0 md:mr-8">
           <Image
-            src="/info_3.jpg"
+            src="/images/info_3.jpg"
             alt="FitWise - zarządzanie klubem fitness"
             width={800}
             height={450}

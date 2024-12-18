@@ -1,11 +1,12 @@
 import './globals.css'
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "FitWise - Łatwe zarządzanie obiektami sportowymi",
-  description: "Landing page FitWise SaaS.",
+export const metadata = {
+  robots: {
+    index: false,
+    follow: false
+  }
 };
-
 export default function RootLayout({
   children,
 }: {

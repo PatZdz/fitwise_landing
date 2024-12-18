@@ -21,7 +21,7 @@ export default function Info_2() {
         {/* Prawa kolumna - obrazek */}
         <div className="w-full md:w-1/2 md:ml-8">
           <Image
-            src="/info_2.jpg"
+            src="/images/info_2.jpg"
             alt="FitWise - zarządzanie klubem fitness"
             width={800}
             height={450}

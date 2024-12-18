@@ -35,7 +35,7 @@ export default function Features() {
             {/* Dolna część: obrazek bez bocznego paddingu i większa wysokość */}
             <div className="relative w-full h-80 overflow-hidden rounded-b-lg">
               <Image
-                src="/feature_1.png"
+                src="/images/feature_1.png"
                 alt="Zarządzanie rezerwacjami"
                 fill
                 className="object-cover"
@@ -60,7 +60,7 @@ export default function Features() {
             </div>
             <div className="relative w-full h-80 overflow-hidden rounded-b-lg">
               <Image
-                src="/feature_2.png"
+                src="/images/feature_2.png"
                 alt="Zarządzanie członkostwami"
                 fill
                 className="object-cover"
@@ -85,7 +85,7 @@ export default function Features() {
             </div>
             <div className="relative w-full h-80 overflow-hidden rounded-b-lg">
               <Image
-                src="/feature_3.png"
+                src="/images/feature_3.png"
                 alt="Raporty i analizy"
                 fill
                 className="object-cover"
@@ -110,7 +110,7 @@ export default function Features() {
             </div>
             <div className="relative w-full h-80 overflow-hidden rounded-b-lg">
               <Image
-                src="/feature_4.png"
+                src="/images/feature_4.png"
                 alt="Automatyzacja obiektów"
                 fill
                 className="object-cover"
