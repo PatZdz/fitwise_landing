@@ -1,51 +1,60 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 
 export default function Testimonials() {
   const testimonials = [
     {
+      id: 1,
       name: "Lynette S.",
       role: "Manager Obiektu",
       avatar: "/images/testimonial_1.jpg",
       text: "FitWise zrewolucjonizował zarządzanie naszym obiektem!",
     },
     {
+      id: 2,
       name: "Dariusz K.",
       role: "Operations Director",
       avatar: "/images/testimonial_2.jpg",
       text: "Niesamowite! Jak szybko możemy zarządzać naszym obiektem sportowym.",
     },
     {
+      id: 3,
       name: "Susanna P.",
       role: "Kierownik Recepcji",
       avatar: "/images/testimonial_3.jpg",
       text: "Niezwykle łatwy w użyciu i efektywny.",
     },
     {
+      id: 4,
       name: "Gabriel M.",
       role: "Koordynator Sprzedaży",
       avatar: "/images/testimonial_4.jpg",
       text: "Nasi członkowie uwielbiają nowy system rezerwacji.",
     },
     {
+      id: 5,
       name: "Adam W.",
       role: "Trener Personalny",
       avatar: "/images/testimonial_5.jpg",
       text: "Integracja z systemem zajęła dosłownie kilka minut!",
     },
     {
+      id: 6,
       name: "Marzena R.",
       role: "Koordynator Siłowni",
       avatar: "/images/testimonial_6.jpg",
       text: "Fantastyczny support i ciągłe aktualizacje.",
     },
     {
+      id: 7,
       name: "Krzysztof B.",
       role: "Specjalista ds. Sprzedaży",
       avatar: "/images/testimonial_7.jpg",
       text: "Zdecydowanie usprawniło naszą pracę.",
     },
     {
+      id: 8,
       name: "Eliza T.",
       role: "Recepcjonistka",
       avatar: "/images/testimonial_8.jpg",
@@ -53,30 +62,33 @@ export default function Testimonials() {
     },
   ];
 
-  // Zduplikowana tablica do stworzenia efektu ciągłego przewijania
   const doubledTestimonials = [...testimonials, ...testimonials];
 
   return (
     <section className="py-16 bg-[#F9F9F9] overflow-hidden">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-4">Co mówią nasi użytkownicy</h2>
+        <h2 className="text-3xl font-bold text-center mb-4">
+          Co mówią nasi użytkownicy
+        </h2>
         <p className="text-center text-gray-600 mb-12">
           Poznaj opinie zadowolonych klientów
         </p>
         <div className="relative w-full overflow-hidden">
           <div className="flex animate-scroll gap-6">
-            {doubledTestimonials.map((item, index) => (
+            {doubledTestimonials.map((item) => (
               <div
-                key={index}
+                key={item.id}
                 className="flex-none bg-white rounded-lg p-6 shadow w-64"
               >
                 <div className="flex items-start mb-4">
                   <div className="w-12 h-12 rounded-full overflow-hidden mr-4 bg-gray-200 flex-shrink-0">
                     {item.avatar && (
-                      <img
+                      <Image
                         src={item.avatar}
                         alt={item.name}
-                        className="w-full h-full object-cover object-center"
+                        width={48}
+                        height={48}
+                        priority
                       />
                     )}
                   </div>
@@ -89,7 +101,9 @@ export default function Testimonials() {
                       {Array(6)
                         .fill(null)
                         .map((_, i) => (
-                          <span key={i} className="text-yellow-500 text-sm">★</span>
+                          <span key={i} className="text-yellow-500 text-sm">
+                            ★
+                          </span>
                         ))}
                     </div>
                   </div>
