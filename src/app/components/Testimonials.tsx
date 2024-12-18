@@ -45,7 +45,7 @@ export default function Testimonials() {
         </p>
         <div className="relative w-full overflow-hidden">
           <div className="flex animate-scroll gap-6">
-            {[...testimonials, ...testimonials].map((item, index) => (
+            {[...testimonials, ...testimonials, ...testimonials].map((item, index) => (
               <div
                 key={`${item.id}_${index}`}
                 className="flex-none bg-white rounded-lg p-6 shadow w-64"
@@ -93,11 +93,13 @@ export default function Testimonials() {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-50%);
+            transform: translateX(calc(-33.33% - 1.5rem));
           }
         }
         .animate-scroll {
           animation: scroll 20s linear infinite;
+          width: fit-content;
+          display: flex;
         }
       `}</style>
     </section>
