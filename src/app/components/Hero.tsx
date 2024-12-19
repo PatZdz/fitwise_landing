@@ -9,7 +9,7 @@ export default function Hero() {
                  pt-32 pb-24 flex flex-col items-center text-center"
     >
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
+        <h1 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">
           Zarządzaj swoimi obiektami <br className="hidden md:block" />
           sportowymi z łatwością
         </h1>
