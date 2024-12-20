@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import Link from 'next/link';
 
 interface NavbarProps {
   isDrawerOpen: boolean;
@@ -12,50 +13,38 @@ export default function Navbar({ isDrawerOpen, setIsDrawerOpen }: NavbarProps) {
   const [showNavbar, setShowNavbar] = useState(true);
 
   useEffect(() => {
-    if (isDrawerOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-  }, [isDrawerOpen]);
+    let lastScrollY = window.pageYOffset;
 
-  useEffect(() => {
-    let lastScrollY = window.scrollY;
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY && !isDrawerOpen) {
-        setShowNavbar(false);
-      } else {
-        setShowNavbar(true);
-      }
+      const currentScrollY = window.pageYOffset;
+      setShowNavbar(currentScrollY <= lastScrollY);
       lastScrollY = currentScrollY;
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [isDrawerOpen]);
 
-  useEffect(() => {
-    if (!isDrawerOpen) {
-      setShowNavbar(true);
-    }
-  }, [isDrawerOpen]);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <>
       <header
-        className={`fixed w-full py-4 bg-white shadow-sm transition-transform duration-300 z-50 ${
-          showNavbar || isDrawerOpen ? "translate-y-0" : "-translate-y-full"
-        }`}
+        className={`fixed w-full py-4 bg-white shadow-sm transition-transform duration-300 z-50 ${showNavbar || isDrawerOpen ? "translate-y-0" : "-translate-y-full"
+          }`}
       >
         <nav className="container mx-auto px-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Image
-              src="/fitwise_logo.svg"
-              alt="FitWise Logo"
-              width={120}
-              height={40}
-              priority
-            />
+            <Link href="/">
+              <Image
+                src="/fitwise_logo.svg"
+                alt="FitWise Logo"
+                width={120}
+                height={40}
+                priority
+              />
+            </Link>
           </div>
 
           <button
@@ -68,35 +57,36 @@ export default function Navbar({ isDrawerOpen, setIsDrawerOpen }: NavbarProps) {
               <Bars3Icon className="h-6 w-6 transition-opacity duration-300" />
             )}
           </button>
-
           <ul className="hidden xl:flex gap-8 font-medium absolute left-1/2 -translate-x-1/2">
             <li>
-              <a href="#features" className="hover:text-primary transition-colors">
-                Funkcje
-              </a>
+              <Link href="/#features">
+                <span className="hover:text-primary transition-colors cursor-pointer">
+                  Funkcje
+                </span>
+              </Link>
             </li>
             <li>
-              <a href="#pricing" className="hover:text-primary transition-colors">
-                Cena
-              </a>
+              <Link href="/#pricing">
+                <span className="hover:text-primary transition-colors cursor-pointer">
+                  Cena
+                </span>
+              </Link>
             </li>
             <li>
-              <a href="#about" className="hover:text-primary transition-colors">
-                O nas
-              </a>
+              <Link href="/about">
+                <span className="hover:text-primary transition-colors cursor-pointer">
+                  O nas
+                </span>
+              </Link>
             </li>
             <li>
-              <a href="#blog" className="hover:text-primary transition-colors">
-                Blog
-              </a>
-            </li>
-            <li>
-              <a href="#contact" className="hover:text-primary transition-colors">
-                Kontakt
-              </a>
+              <Link href="/#contact">
+                <span className="hover:text-primary transition-colors cursor-pointer">
+                  Kontakt
+                </span>
+              </Link>
             </li>
           </ul>
-
           <div className="hidden xl:flex items-center gap-4">
             <a className="text-sm font-semibold" href="#">
               Pobierz aplikację
@@ -110,12 +100,9 @@ export default function Navbar({ isDrawerOpen, setIsDrawerOpen }: NavbarProps) {
 
       {isDrawerOpen && (
         <>
-          <div
-            className={`fixed top-0 right-0 h-screen w-64 bg-white shadow-lg z-[100] flex flex-col
+          <div className={`fixed top-0 right-0 h-screen w-64 bg-white shadow-lg z-[100] flex flex-col
               transform transition-transform duration-300 ease-in-out xl:hidden
-              ${isDrawerOpen ? "translate-x-0" : "translate-x-full"}
-            `}
-          >
+              ${isDrawerOpen ? "translate-x-0" : "translate-x-full"}`}>
             <button
               className="absolute top-4 right-4 z-[110]"
               onClick={() => setIsDrawerOpen(false)}
@@ -127,49 +114,54 @@ export default function Navbar({ isDrawerOpen, setIsDrawerOpen }: NavbarProps) {
               <div className="px-6">
                 <ul>
                   <li>
-                    <a
-                      href="#features"
-                      className="block py-3 text-center text-lg hover:bg-gray-50"
-                      onClick={() => setIsDrawerOpen(false)}
-                    >
-                      Funkcje
-                    </a>
+                    <Link href="/#features">
+                      <span 
+                        className="block py-3 text-center text-lg hover:bg-gray-50 w-full"
+                        onClick={() => setIsDrawerOpen(false)}
+                      >
+                        Funkcje
+                      </span>
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="#pricing"
-                      className="block py-3 text-center text-lg hover:bg-gray-50"
-                      onClick={() => setIsDrawerOpen(false)}
-                    >
-                      Cena
-                    </a>
+                    <Link href="/#pricing">
+                      <span 
+                        className="block py-3 text-center text-lg hover:bg-gray-50 w-full"
+                        onClick={() => setIsDrawerOpen(false)}
+                      >
+                        Cena
+                      </span>
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="#about"
-                      className="block py-3 text-center text-lg hover:bg-gray-50"
-                      onClick={() => setIsDrawerOpen(false)}
-                    >
-                      O nas
-                    </a>
+                    <Link href="/about">
+                      <span 
+                        className="block py-3 text-center text-lg hover:bg-gray-50 w-full"
+                        onClick={() => setIsDrawerOpen(false)}
+                      >
+                        O nas
+                      </span>
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="#blog"
-                      className="block py-3 text-center text-lg hover:bg-gray-50"
-                      onClick={() => setIsDrawerOpen(false)}
-                    >
-                      Blog
-                    </a>
+                    <Link href="/#blog">
+                      <span 
+                        className="block py-3 text-center text-lg hover:bg-gray-50 w-full"
+                        onClick={() => setIsDrawerOpen(false)}
+                      >
+                        Blog
+                      </span>
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="#contact"
-                      className="block py-3 text-center text-lg hover:bg-gray-50"
-                      onClick={() => setIsDrawerOpen(false)}
-                    >
-                      Kontakt
-                    </a>
+                    <Link href="/#contact">
+                      <span 
+                        className="block py-3 text-center text-lg hover:bg-gray-50 w-full"
+                        onClick={() => setIsDrawerOpen(false)}
+                      >
+                        Kontakt
+                      </span>
+                    </Link>
                   </li>
                 </ul>
               </div>
