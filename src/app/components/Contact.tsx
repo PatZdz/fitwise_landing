@@ -4,7 +4,7 @@ import React from "react";
 export default function Contact() {
   return (
     <section id="contact" className="py-16 bg-white">
-      <div className="container mx-auto px-4 max-w-lg">
+      <div className="container mx-auto px-4 max-w-md sm:max-w-lg">
         <h2 className="text-3xl font-bold text-center mb-4">Skontaktuj się z nami</h2>
         <p className="text-center text-gray-600 mb-8">
           Masz pytania? Wypełnij formularz, a my się z Tobą skontaktujemy.
