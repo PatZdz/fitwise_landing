@@ -1,15 +1,15 @@
 const teamMembers = [
     {
       name: 'Patryk Zdziabek',
-      role: 'CEO & Founder',
+      role: 'Co-Founder',
       image: '/images/patryk.jpg',
-      bio: 'Doświadczony lider z pasją do innowacji w branży sportowej.',
+      bio: 'Doświadczony eskpert z pasją do innowacji w branży sportowej.',
       linkedin: '#',
       specialization: 'Zarządzanie strategiczne, Rozwój biznesu'
     },
     {
       name: 'Daniel Semerjyan',
-      role: 'CTO',
+      role: 'Co-Founder',
       image: '/images/daniel.jpg',
       bio: 'Ekspert w tworzeniu skalowalnych rozwiązań technologicznych.',
       linkedin: '#',
@@ -17,7 +17,7 @@ const teamMembers = [
     },
     {
       name: 'Michał Nawrocki',
-      role: 'Head of Marketing',
+      role: 'Co-Founder',
       image: '/images/michal.jpg',
       bio: 'Strateg marketingowy budujący silną markę FitWise.',
       linkedin: '#',
