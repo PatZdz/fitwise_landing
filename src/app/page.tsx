@@ -10,6 +10,8 @@ import Footer from "./components/Footer";
 import Info_1 from "./components/Info_1";
 import Info_2 from "./components/Info_2";
 import Info_3 from "./components/Info_3";
+import Header from "./about/components/Header";
+import Values from "./about/components/Values";
 
 export default function Page() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -18,10 +20,12 @@ export default function Page() {
     <>
       <Navbar isDrawerOpen={isDrawerOpen} setIsDrawerOpen={setIsDrawerOpen} />
       <Hero />
+      <Features />
+      <Header />
+      <Values />
       <Info_1 />
       <Info_2 />
       <Info_3 />
-      <Features />
       <Testimonials />
       <Pricing />
       <Contact />

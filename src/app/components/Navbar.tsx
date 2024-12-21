@@ -48,7 +48,7 @@ export default function Navbar({ isDrawerOpen, setIsDrawerOpen }: NavbarProps) {
           </div>
 
           <button
-            className="xl:hidden z-50"
+            className="xl:hidden z-50 pr-4"
             onClick={() => setIsDrawerOpen(!isDrawerOpen)}
           >
             {isDrawerOpen ? (

@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <section
-      className="relative w-full bg-gradient-to-b from-white via-[#F1F5FA] to-[#e3e4e6]
+      className="relative w-full bg-gradient-to-b from-blue-50 via-white to-blue-50
                  pt-32 pb-24 flex flex-col items-center text-center"
     >
       <div className="container mx-auto px-4">
