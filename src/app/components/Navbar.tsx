@@ -92,7 +92,7 @@ export default function Navbar({ isDrawerOpen, setIsDrawerOpen }: NavbarProps) {
               Pobierz aplikację
             </a>
             <a className="btn-cta" href="#">
-              Wypróbuj za darmo
+              Zaloguj się
             </a>
           </div>
         </nav>
@@ -144,16 +144,6 @@ export default function Navbar({ isDrawerOpen, setIsDrawerOpen }: NavbarProps) {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/#blog">
-                      <span 
-                        className="block py-3 text-center text-lg hover:bg-gray-50 w-full"
-                        onClick={() => setIsDrawerOpen(false)}
-                      >
-                        Blog
-                      </span>
-                    </Link>
-                  </li>
-                  <li>
                     <Link href="/#contact">
                       <span 
                         className="block py-3 text-center text-lg hover:bg-gray-50 w-full"
@@ -171,7 +161,7 @@ export default function Navbar({ isDrawerOpen, setIsDrawerOpen }: NavbarProps) {
                   Pobierz aplikację
                 </a>
                 <a href="#" className="block text-center btn-cta py-3">
-                  Wypróbuj za darmo
+                  Zaloguj się
                 </a>
               </div>
             </div>

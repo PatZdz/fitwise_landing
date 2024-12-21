@@ -4,7 +4,6 @@ import Navbar from '@/app/components/Navbar';
 import Footer from '@/app/components/Footer';
 import Header from './components/Header';
 import Mission from './components/Mission';
-import Values from './components/Values';
 import Team from './components/Team';
 
 export default function AboutPage() {
@@ -15,7 +14,6 @@ export default function AboutPage() {
       <Navbar isDrawerOpen={isDrawerOpen} setIsDrawerOpen={setIsDrawerOpen} />
       <main className="flex-grow">
         <Header />
-        <Values />
         <Mission />
         <Team />
       </main>
