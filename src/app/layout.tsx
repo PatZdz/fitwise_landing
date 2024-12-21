@@ -1,12 +1,13 @@
 import './globals.css'
-// Removed unused import
-
 import { Metadata } from 'next';
+import Cookies from './components/Cookies';
 
 export const metadata: Metadata = {
   title: 'FitWise - Łatwe zarządzanie obiektami sportowymi',
   description: 'Osiągnij swoje cele fitness z FitWise.',
-};export default function RootLayout({
+};
+
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     <html lang="pl">
       <body>
         {children}
+        <Cookies />
       </body>
     </html>
   );
