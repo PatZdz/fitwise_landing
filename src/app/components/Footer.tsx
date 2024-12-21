@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -8,28 +9,28 @@ export default function Footer() {
         <div>
           <h3 className="font-bold mb-3">Firma</h3>
           <ul className="space-y-2 text-gray-600">
-            <li><a href="#" aria-label="O nas">O nas</a></li>
+            <li><Link href="/about" aria-label="O nas">O nas</Link></li>
           </ul>
         </div>
         <div>
           <h3 className="font-bold mb-3">Produkt</h3>
           <ul className="space-y-2 text-gray-600">
-            <li><a href="#" aria-label="Funkcje">Funkcje</a></li>
-            <li><a href="#" aria-label="Cennik">Cennik</a></li>
+            <li><Link href="/#features" aria-label="Funkcje">Funkcje</Link></li>
+            <li><Link href="/#pricing" aria-label="Cennik">Cennik</Link></li>
           </ul>
         </div>
         <div>
           <h3 className="font-bold mb-3">Wsparcie</h3>
           <ul className="space-y-2 text-gray-600">
-            <li><a href="#" aria-label="Kontakt">Kontakt</a></li>
+            <li><Link href="/#contact" aria-label="Kontakt">Kontakt</Link></li>
           </ul>
         </div>
         <div>
           <h3 className="font-bold mb-3">Prawo</h3>
           <ul className="space-y-2 text-gray-600">
-            <li><a href="#" aria-label="Polityka prywatności">Polityka prywatności</a></li>
-            <li><a href="#" aria-label="Warunki korzystania">Warunki korzystania</a></li>
-            <li><a href="#" aria-label="Polityka plików cookie">Polityka plików cookie</a></li>
+            <li><Link href="/privacy" aria-label="Polityka prywatności">Polityka prywatności</Link></li>
+            <li><Link href="/terms" aria-label="Warunki korzystania">Warunki korzystania</Link></li>
+            <li><Link href="/cookies" aria-label="Polityka plików cookie">Polityka plików cookie</Link></li>
           </ul>
         </div>
       </div>
