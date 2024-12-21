@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 
@@ -14,23 +15,43 @@ const sections = [
     title: "II. Zakres zbieranych danych",
     content: [
       "1. W ramach korzystania z Aplikacji mogą być zbierane następujące dane osobowe:",
-      ["Imię i nazwisko", "Adres e-mail", "Numer telefonu", "Dane dotyczące korzystania z obiektów sportowych", "Informacje techniczne dotyczące urządzenia i połączenia internetowego"]
+      [
+        "Imię i nazwisko",
+        "Adres e-mail",
+        "Numer telefonu",
+        "Dane dotyczące korzystania z obiektów sportowych",
+        "Informacje techniczne dotyczące urządzenia i połączenia internetowego"
+      ]
     ]
   },
   {
     title: "III. Cele i podstawy prawne przetwarzania danych",
     content: [
       "1. Dane osobowe są przetwarzane w celu:",
-      ["Świadczenia usług oferowanych przez Aplikację", "Umożliwienia rezerwacji i zarządzania obiektami sportowymi", "Komunikacji z użytkownikami", "Realizacji obowiązków prawnych ciążących na Administratorze", "Analiz i statystyk mających na celu ulepszanie Aplikacji"],
+      [
+        "Świadczenia usług oferowanych przez Aplikację",
+        "Umożliwienia rezerwacji i zarządzania obiektami sportowymi",
+        "Komunikacji z użytkownikami",
+        "Realizacji obowiązków prawnych ciążących na Administratorze",
+        "Analiz i statystyk mających na celu ulepszanie Aplikacji"
+      ],
       "2. Podstawą prawną przetwarzania danych jest:",
-      ["Niezbędność do wykonania umowy o świadczenie usług (art. 6 ust. 1 lit. b RODO)", "Obowiązek prawny (art. 6 ust. 1 lit. c RODO)", "Prawnie uzasadniony interes Administratora (art. 6 ust. 1 lit. f RODO)"]
+      [
+        "Niezbędność do wykonania umowy o świadczenie usług (art. 6 ust. 1 lit. b RODO)",
+        "Obowiązek prawny (art. 6 ust. 1 lit. c RODO)",
+        "Prawnie uzasadniony interes Administratora (art. 6 ust. 1 lit. f RODO)"
+      ]
     ]
   },
   {
     title: "IV. Odbiorcy danych",
     content: [
       "1. Dane osobowe mogą być przekazywane podmiotom współpracującym z Administratorem w zakresie niezbędnym do realizacji usług, takim jak:",
-      ["Dostawcy usług IT", "Operatorzy płatności", "Podmioty obsługujące rezerwacje"],
+      [
+        "Dostawcy usług IT",
+        "Operatorzy płatności",
+        "Podmioty obsługujące rezerwacje"
+      ],
       "2. Dane mogą być również udostępniane organom publicznym w przypadkach przewidzianych przez prawo."
     ]
   },
@@ -50,7 +71,16 @@ const sections = [
     title: "VII. Prawa osób, których dane dotyczą",
     content: [
       "1. Użytkownikom przysługują następujące prawa:",
-      ["Prawo dostępu do danych", "Prawo do sprostowania danych", "Prawo do usunięcia danych", "Prawo do ograniczenia przetwarzania", "Prawo do przenoszenia danych", "Prawo do wniesienia sprzeciwu", "Prawo do cofnięcia zgody w dowolnym momencie", "Prawo do wniesienia skargi do organu nadzorczego"]
+      [
+        "Prawo dostępu do danych",
+        "Prawo do sprostowania danych",
+        "Prawo do usunięcia danych",
+        "Prawo do ograniczenia przetwarzania",
+        "Prawo do przenoszenia danych",
+        "Prawo do wniesienia sprzeciwu",
+        "Prawo do cofnięcia zgody w dowolnym momencie",
+        "Prawo do wniesienia skargi do organu nadzorczego"
+      ]
     ]
   },
   {
@@ -82,11 +112,11 @@ const sections = [
 ];
 
 export default function Page() {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
   return (
     <>
-      <Navbar isDrawerOpen={false} setIsDrawerOpen={function (isOpen: boolean): void {
-              throw new Error("Function not implemented.");
-          } } />
+      <Navbar isDrawerOpen={isDrawerOpen} setIsDrawerOpen={setIsDrawerOpen} />
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">

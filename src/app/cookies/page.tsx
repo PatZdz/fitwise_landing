@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 
@@ -15,9 +16,11 @@ const sections = [
     title: "II. Wykorzystanie plików cookies",
     content: [
       "1. Aplikacja wykorzystuje pliki cookies w następujących celach:",
-      ["Niezbędne: umożliwiają prawidłowe funkcjonowanie Aplikacji, np. utrzymanie sesji Użytkownika.",
-       "Funkcjonalne: zapamiętują preferencje Użytkownika, co ułatwia korzystanie z Aplikacji.",
-       "Analityczne: zbierają anonimowe dane statystyczne dotyczące sposobu korzystania z Aplikacji, co pomaga w jej ulepszaniu."]
+      [
+        "Niezbędne: umożliwiają prawidłowe funkcjonowanie Aplikacji, np. utrzymanie sesji Użytkownika.",
+        "Funkcjonalne: zapamiętują preferencje Użytkownika, co ułatwia korzystanie z Aplikacji.",
+        "Analityczne: zbierają anonimowe dane statystyczne dotyczące sposobu korzystania z Aplikacji, co pomaga w jej ulepszaniu."
+      ]
     ]
   },
   {
@@ -50,11 +53,11 @@ const sections = [
 ];
 
 export default function Page() {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
   return (
     <>
-      <Navbar isDrawerOpen={false} setIsDrawerOpen={function (isOpen: boolean): void {
-              throw new Error("Function not implemented.");
-          } } />
+      <Navbar isDrawerOpen={isDrawerOpen} setIsDrawerOpen={setIsDrawerOpen} />
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">

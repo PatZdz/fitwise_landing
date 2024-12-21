@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 
@@ -37,7 +38,11 @@ const sections = [
     title: "V. Usługi świadczone przez Aplikację",
     content: [
       "1. Aplikacja umożliwia m.in.:",
-      ["Rezerwację obiektów sportowych", "Zarządzanie rezerwacjami", "Przegląd dostępności obiektów"],
+      [
+        "Rezerwację obiektów sportowych",
+        "Zarządzanie rezerwacjami",
+        "Przegląd dostępności obiektów"
+      ],
       "2. Szczegółowy opis funkcjonalności Aplikacji jest dostępny w jej interfejsie."
     ]
   },
@@ -52,9 +57,15 @@ const sections = [
     title: "VII. Prawa i obowiązki Użytkownika",
     content: [
       "1. Użytkownik ma prawo do:",
-      ["Korzystania z Aplikacji zgodnie z jej przeznaczeniem", "Zgłaszania uwag i sugestii dotyczących funkcjonowania Aplikacji"],
+      [
+        "Korzystania z Aplikacji zgodnie z jej przeznaczeniem",
+        "Zgłaszania uwag i sugestii dotyczących funkcjonowania Aplikacji"
+      ],
       "2. Użytkownik zobowiązuje się do:",
-      ["Niepodejmowania działań mogących zakłócić funkcjonowanie Aplikacji", "Przestrzegania praw autorskich i innych praw własności intelektualnej związanych z Aplikacją"]
+      [
+        "Niepodejmowania działań mogących zakłócić funkcjonowanie Aplikacji",
+        "Przestrzegania praw autorskich i innych praw własności intelektualnej związanych z Aplikacją"
+      ]
     ]
   },
   {
@@ -62,14 +73,21 @@ const sections = [
     content: [
       "1. Usługodawca dołoży starań, aby Aplikacja działała poprawnie i była dostępna dla Użytkowników.",
       "2. Usługodawca zastrzega sobie prawo do:",
-      ["Czasowego wyłączenia Aplikacji w celu jej konserwacji lub aktualizacji", "Wprowadzania zmian w funkcjonalnościach Aplikacji", "Zablokowania konta Użytkownika w przypadku naruszenia Regulaminu"]
+      [
+        "Czasowego wyłączenia Aplikacji w celu jej konserwacji lub aktualizacji",
+        "Wprowadzania zmian w funkcjonalnościach Aplikacji",
+        "Zablokowania konta Użytkownika w przypadku naruszenia Regulaminu"
+      ]
     ]
   },
   {
     title: "IX. Odpowiedzialność",
     content: [
       "1. Usługodawca nie ponosi odpowiedzialności za:",
-      ["Szkody wynikłe z nieprawidłowego korzystania z Aplikacji przez Użytkownika", "Przerwy w działaniu Aplikacji niezależne od Usługodawcy"],
+      [
+        "Szkody wynikłe z nieprawidłowego korzystania z Aplikacji przez Użytkownika",
+        "Przerwy w działaniu Aplikacji niezależne od Usługodawcy"
+      ],
       "2. Użytkownik ponosi odpowiedzialność za działania podjęte w ramach swojego konta w Aplikacji."
     ]
   },
@@ -97,11 +115,11 @@ const sections = [
 ];
 
 export default function Page() {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
   return (
     <>
-      <Navbar isDrawerOpen={false} setIsDrawerOpen={function (isOpen: boolean): void {
-              throw new Error("Function not implemented.");
-          } } />
+      <Navbar isDrawerOpen={isDrawerOpen} setIsDrawerOpen={setIsDrawerOpen} />
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
