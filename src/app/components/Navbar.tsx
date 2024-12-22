@@ -110,9 +110,9 @@ export default function Navbar({ isDrawerOpen, setIsDrawerOpen }: NavbarProps) {
           </ul>
           <div className="hidden xl:flex items-center gap-4">
             <a className="text-sm font-semibold" href="#">
-              Pobierz aplikację
+              Zarejestruj się
             </a>
-            <a className="btn-cta" href="#">
+            <a className="btn-cta" href="https://app.fitwi.se">
               Zaloguj się
             </a>
           </div>
@@ -178,10 +178,10 @@ export default function Navbar({ isDrawerOpen, setIsDrawerOpen }: NavbarProps) {
               </div>
 
               <div className="px-6 pb-60 flex flex-col items-center">
-                <a href="#" className="block text-center py-3 font-semibold">
-                  Pobierz aplikację
+                <a href="/#contact" className="block text-center py-3 font-semibold">
+                  Zarejestruj się
                 </a>
-                <a href="#" className="block text-center btn-cta py-3">
+                <a href="https://app.fitwi.se" className="block text-center btn-cta py-3">
                   Zaloguj się
                 </a>
               </div>
