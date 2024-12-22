@@ -108,9 +108,9 @@ export default function Navbar({ isDrawerOpen, setIsDrawerOpen }: NavbarProps) {
             </li>
           </ul>
           <div className="hidden xl:flex items-center gap-4">
-            <a className="text-sm font-semibold" href="/#contact">
+            <Link href="/#contact" className="text-sm font-semibold">
               Zarejestruj się
-            </a>
+            </Link>
             <a className="btn-cta" href="https://app.fitwi.se">
               Zaloguj się
             </a>
