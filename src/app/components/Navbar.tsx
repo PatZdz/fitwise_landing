@@ -177,9 +177,9 @@ export default function Navbar({ isDrawerOpen, setIsDrawerOpen }: NavbarProps) {
               </div>
 
               <div className="px-6 pb-60 flex flex-col items-center">
-                <a href="/#contact" className="block text-center py-3 font-semibold">
+                <Link href="/#contact" className="block text-center py-3 font-semibold">
                   Zarejestruj się
-                </a>
+                </Link>
                 <a href="https://app.fitwi.se" className="block text-center btn-cta py-3">
                   Zaloguj się
                 </a>
