@@ -4,9 +4,7 @@ import React, { useState } from "react";
 export default function Contact() {
   const [touched, setTouched] = useState<{ [key: string]: boolean }>({});
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
-  const [loading, setLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
 
   const handleBlur = (fieldName: string) => {
     setTouched((prev) => ({ ...prev, [fieldName]: true }));
@@ -30,9 +28,10 @@ export default function Contact() {
 
   const inputClasses = (fieldName: string, required: boolean = false) => `
     mt-1 block w-full px-4 py-2 border rounded-md transition-all duration-200
-    ${touched[fieldName] && required && errors[fieldName]
-      ? "border-red-500 bg-red-50 focus:ring-red-500 focus:border-red-500"
-      : "border-gray-300 focus:ring-primary focus:border-primary"
+    ${
+      touched[fieldName] && required && errors[fieldName]
+        ? "border-red-500 bg-red-50 focus:ring-red-500 focus:border-red-500"
+        : "border-gray-300 focus:ring-primary focus:border-primary"
     }
   `;
 
@@ -41,44 +40,17 @@ export default function Contact() {
     ${touched[fieldName] && errors[fieldName] ? "text-red-500" : "text-gray-700"}
   `;
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
-    setSuccessMessage("");
-    setErrorMessage("");
+    const fields = ["name", "email", "company", "facilityType", "facilityCount", "contactConsent", "privacyPolicy"];
+    fields.forEach((field) => validateField(field));
 
-    // Zbieranie danych z formularza
-    const formData = {
-      name: (document.getElementById("name") as HTMLInputElement).value,
-      email: (document.getElementById("email") as HTMLInputElement).value,
-      phone: (document.getElementById("phone") as HTMLInputElement).value,
-      company: (document.getElementById("company") as HTMLInputElement).value,
-      location: (document.getElementById("location") as HTMLInputElement).value,
-      facilityType: (document.getElementById("facilityType") as HTMLSelectElement).value,
-      facilityCount: (document.getElementById("facilityCount") as HTMLSelectElement).value,
-      message: (document.getElementById("message") as HTMLTextAreaElement).value,
-      contactConsent: (document.getElementById("contactConsent") as HTMLInputElement).checked,
-      privacyPolicy: (document.getElementById("privacyPolicy") as HTMLInputElement).checked,
-    };
-    
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setSuccessMessage("Formularz został wysłany pomyślnie!");
-      } else {
-        setErrorMessage("Wystąpił problem podczas wysyłania formularza.");
-      }
-    } catch (error) {
-      setErrorMessage("Nie udało się połączyć z serwerem.");
-    } finally {
-      setLoading(false);
+    const hasErrors = Object.keys(errors).length > 0;
+    if (!hasErrors) {
+      setSuccessMessage("Formularz został wysłany pomyślnie!");
+      (e.currentTarget as HTMLFormElement).reset();
+      setTouched({});
+      setErrors({});
     }
   };
 
@@ -91,9 +63,6 @@ export default function Contact() {
         </p>
         {successMessage && (
           <p className="text-center text-green-500 mb-4">{successMessage}</p>
-        )}
-        {errorMessage && (
-          <p className="text-center text-red-500 mb-4">{errorMessage}</p>
         )}
         <form className="space-y-6" noValidate onSubmit={handleSubmit}>
           <div>
@@ -182,7 +151,7 @@ export default function Contact() {
               onBlur={() => handleBlur("facilityType")}
               className={inputClasses("facilityType", true)}
               onChange={(e) => {
-                const otherInput = document.getElementById("otherFacilityType");
+                const otherInput = document.getElementById("otherFacilityType") as HTMLInputElement;
                 if (otherInput) {
                   otherInput.style.display = e.target.value === "other" ? "block" : "none";
                 }
@@ -249,10 +218,11 @@ export default function Contact() {
                 name="contactConsent"
                 required
                 onBlur={() => handleBlur("contactConsent")}
-                className={`mt-1 mr-2 ${touched["contactConsent"] && errors["contactConsent"]
+                className={`mt-1 mr-2 ${
+                  touched["contactConsent"] && errors["contactConsent"]
                     ? "border-red-500 bg-red-50"
                     : ""
-                  }`}
+                }`}
               />
               <label htmlFor="contactConsent" className={labelClasses("contactConsent")}>
                 Wyrażam zgodę na kontakt w celu przedstawienia oferty FitWise. *
@@ -269,10 +239,11 @@ export default function Contact() {
                 name="privacyPolicy"
                 required
                 onBlur={() => handleBlur("privacyPolicy")}
-                className={`mt-1 mr-2 ${touched["privacyPolicy"] && errors["privacyPolicy"]
+                className={`mt-1 mr-2 ${
+                  touched["privacyPolicy"] && errors["privacyPolicy"]
                     ? "border-red-500 bg-red-50"
                     : ""
-                  }`}
+                }`}
               />
               <label htmlFor="privacyPolicy" className={labelClasses("privacyPolicy")}>
                 Akceptuję politykę prywatności i warunki użytkowania. *
@@ -287,9 +258,8 @@ export default function Contact() {
             <button
               type="submit"
               className="btn-cta px-6 py-3"
-              disabled={loading}
             >
-              {loading ? "Wysyłanie..." : "Skontaktuj się z nami"}
+              Skontaktuj się z nami
             </button>
           </div>
         </form>

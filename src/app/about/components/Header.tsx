@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image"; // Dodany import
 
 const Header = () => {
   return (
@@ -9,16 +10,12 @@ const Header = () => {
         <div className="absolute left-0 top-0 w-full lg:w-1/2 h-full bg-blue-50" />
         {/* Desktop image */}
         <div className="hidden lg:block absolute left-1/2 top-0 w-1/2 h-full">
-          <img
-
-
-
-
-
-
-                    src="/images/about.jpg"
+          <Image
+            src="/images/about.jpg"
             alt="Nowoczesna siłownia"
-            className="h-full w-full object-cover object-center"
+            layout="fill" // Użycie layout="fill" dla pełnego wypełnienia
+            objectFit="cover" // Obiekt dopasowany do rozmiaru
+            className="object-cover object-center"
           />
         </div>
       </div>
@@ -63,7 +60,7 @@ const Header = () => {
               </div>
               <div>
                 <h3 className="font-bold text-lg">3000zł</h3>
-                <p className="text-gray-600">Miesięcznie więcej na trenera</p>
+                <p className="text-gray-600">Miesięcznie więcej na </p>
               </div>
             </div>
             <div className="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left">

@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image"; // Dodany import
 
 const Mission = () => {
   const features = [
@@ -71,9 +72,11 @@ const Mission = () => {
             className="relative"
           >
             <div className="relative rounded-2xl overflow-hidden aspect-square">
-              <img
+              <Image
                 src="/images/mission.jpg"
                 alt="FitWise - Innowacyjne rozwiązania dla branży fitness"
+                layout="fill" // Użycie layout="fill" dla pełnego wypełnienia
+                objectFit="cover" // Obiekt dopasowany do rozmiaru
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent"></div>
