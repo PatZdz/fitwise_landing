@@ -40,17 +40,36 @@ export default function Contact() {
     ${touched[fieldName] && errors[fieldName] ? "text-red-500" : "text-gray-700"}
   `;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const fields = ["name", "email", "company", "facilityType", "facilityCount", "contactConsent", "privacyPolicy"];
     fields.forEach((field) => validateField(field));
 
     const hasErrors = Object.keys(errors).length > 0;
     if (!hasErrors) {
-      setSuccessMessage("Formularz został wysłany pomyślnie!");
-      (e.currentTarget as HTMLFormElement).reset();
-      setTouched({});
-      setErrors({});
+      try {
+        const formData = new FormData(e.target as HTMLFormElement);
+        const formJson = Object.fromEntries(formData.entries());
+        
+        await fetch('/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formJson),
+        });
+
+        setSuccessMessage("Udało się wysłać wiadomość!");
+        (e.currentTarget as HTMLFormElement).reset();
+        setTouched({});
+        setErrors({});
+        
+        setTimeout(() => {
+          setSuccessMessage("");
+        }, 5000);
+      } catch (error) {
+        console.error("Błąd podczas wysyłania formularza:", error);
+      }
     }
   };
 
@@ -61,9 +80,18 @@ export default function Contact() {
         <p className="text-center text-gray-600 mb-8">
           Masz pytania? Wypełnij formularz, a my się z Tobą skontaktujemy.
         </p>
+        
         {successMessage && (
-          <p className="text-center text-green-500 mb-4">{successMessage}</p>
+          <div className="mb-8 bg-green-100 border border-green-400 text-green-700 px-8 py-3 rounded-md shadow-lg animate-fade-in max-w-xl mx-auto">
+            <p className="flex items-center justify-center gap-2 font-medium">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              {successMessage}
+            </p>
+          </div>
         )}
+
         <form className="space-y-6" noValidate onSubmit={handleSubmit}>
           <div>
             <label htmlFor="name" className={labelClasses("name")}>
