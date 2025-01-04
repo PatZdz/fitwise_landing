@@ -22,12 +22,8 @@ export default function Info_1() {
           <p className="text-gray-600 mb-6">
             Zaoszczędź nawet 5 godzin tygodniowo (ponad 20 godzin miesięcznie) dzięki automatyzacji rezerwacji, płatności i przypomnień. Wykorzystaj ten czas na prowadzenie dodatkowych zajęć lub rozwój biznesu. Jeśli godzina zajęć kosztuje 150 zł, możesz zyskać nawet 3000 zł miesięcznie. Efektywne zarządzanie to więcej czasu i wyższe dochody!
           </p>
-          <div className="text-center md:text-left">
-            <a href="#" className="btn-cta">
-              Dowiedz się więcej
-            </a>
-          </div>
         </div>
       </div>
-    </section>  );
+    </section>
+  );
 }

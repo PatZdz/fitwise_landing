@@ -36,7 +36,7 @@ export default function Pricing() {
                 className="btn-cta w-full mb-6"
                 aria-label="Wybierz Free plan"
               >
-                Rozpocznij
+                Porozmawiajmy
               </button>
             </div>
             <div className="px-6 pb-6">
@@ -75,7 +75,7 @@ export default function Pricing() {
                 className="btn-cta w-full mb-6"
                 aria-label="Wybierz Pro plan"
               >
-                Rozpocznij
+                Porozmawiajmy
               </button>
             </div>
             <div className="px-6 pb-6">

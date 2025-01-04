@@ -22,11 +22,6 @@ export default function Info_3() {
           <p className="text-gray-600 mb-6">
             Zapomnij o wielu aplikacjach i konieczności zatrudniania recepcji. Dzięki naszej aplikacji masz wszystko pod ręką – łatwo, szybko i w jednym miejscu.
           </p>
-          <div className="text-center md:text-left">
-            <a href="#" className="btn-cta">
-              Dowiedz się więcej
-            </a>
-          </div>
         </div>
       </div>
     </section>  );

@@ -12,11 +12,6 @@ export default function Info_2() {
           <p className="text-gray-600 mb-6">
             Nie marnuj czasu na problemy techniczne. Nasz system jest prosty w konfiguracji – wystarczy 15 minut, aby rozpocząć pracę i dodawać swoich klientów. Każda godzina spędzona na technicznych zawiłościach to stracony czas, a my eliminujemy to ryzyko. Postaw na prostotę i efektywność!
           </p>
-          <div className="text-center md:text-left">
-            <a href="#" className="btn-cta">
-              Dowiedz się więcej
-            </a>
-          </div>
         </div>
         {/* Prawa kolumna - obrazek */}
         <div className="w-full md:w-1/2 md:ml-8">

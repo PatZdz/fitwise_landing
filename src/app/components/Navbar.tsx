@@ -30,24 +30,25 @@ export default function Navbar({ isDrawerOpen, setIsDrawerOpen }: NavbarProps) {
 
   useEffect(() => {
     if (isDrawerOpen) {
-      document.documentElement.style.overflow = 'hidden';
       document.body.style.overflow = 'hidden';
-      document.body.style.position = 'fixed';
-      document.body.style.width = '100%';
+      document.documentElement.style.overflow = 'hidden';
+      document.body.style.height = '100vh';
+      document.body.style.touchAction = 'none';
     } else {
-      document.documentElement.style.overflow = '';
       document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.width = '';
+      document.documentElement.style.overflow = '';
+      document.body.style.height = '';
+      document.body.style.touchAction = '';
     }
 
     return () => {
-      document.documentElement.style.overflow = '';
       document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.width = '';
+      document.documentElement.style.overflow = '';
+      document.body.style.height = '';
+      document.body.style.touchAction = '';
     };
   }, [isDrawerOpen]);
+
   return (
     <>
       <header
@@ -108,12 +109,9 @@ export default function Navbar({ isDrawerOpen, setIsDrawerOpen }: NavbarProps) {
             </li>
           </ul>
           <div className="hidden xl:flex items-center gap-4">
-            <Link href="/#contact" className="text-sm font-semibold">
-              Zarejestruj się
+            <Link href="/" className="btn-cta">
+              Zapisz się
             </Link>
-            <a className="btn-cta" href="https://app.fitwi.se">
-              Zaloguj się
-            </a>
           </div>
         </nav>
       </header>
@@ -177,12 +175,13 @@ export default function Navbar({ isDrawerOpen, setIsDrawerOpen }: NavbarProps) {
               </div>
 
               <div className="px-6 pb-60 flex flex-col items-center">
-                <Link href="/#contact" className="block text-center py-3 font-semibold">
-                  Zarejestruj się
+                <Link 
+                  href="/" 
+                  className="block text-center btn-cta py-3"
+                  onClick={() => setIsDrawerOpen(false)}
+                >
+                  Zapisz się
                 </Link>
-                <a href="https://app.fitwi.se" className="block text-center btn-cta py-3">
-                  Zaloguj się
-                </a>
               </div>
             </div>
           </div>

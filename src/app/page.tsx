@@ -24,7 +24,7 @@ export default function Page() {
       <Info_1 />
       <Info_2 />
       <Info_3 />
-      <Testimonials />
+    {/*  <Testimonials /> */}
       <Pricing />
       <Contact />
       <Footer />

@@ -10,7 +10,13 @@ const Header = () => {
         {/* Desktop image */}
         <div className="hidden lg:block absolute left-1/2 top-0 w-1/2 h-full">
           <img
-            src="/images/about.jpg"
+
+
+
+
+
+
+                    src="/images/about.jpg"
             alt="Nowoczesna siłownia"
             className="h-full w-full object-cover object-center"
           />
@@ -56,8 +62,8 @@ const Header = () => {
                 <span className="text-2xl">🏆</span>
               </div>
               <div>
-                <h3 className="font-bold text-lg">500+</h3>
-                <p className="text-gray-600">Zadowolonych klientów</p>
+                <h3 className="font-bold text-lg">3000zł</h3>
+                <p className="text-gray-600">Miesięcznie więcej na trenera</p>
               </div>
             </div>
             <div className="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left">
@@ -65,8 +71,8 @@ const Header = () => {
                 <span className="text-2xl">⚡</span>
               </div>
               <div>
-                <h3 className="font-bold text-lg">98%</h3>
-                <p className="text-gray-600">Skuteczność rozwiązań</p>
+                <h3 className="font-bold text-lg">15 godzin</h3>
+                <p className="text-gray-600">Więcej w ciągu tygodnia</p>
               </div>
             </div>
           </motion.div>
