@@ -1,6 +1,7 @@
 import './globals.css'
 import { Metadata } from 'next';
 import Cookies from './components/Cookies';
+import Script from 'next/script'
 
 export const metadata: Metadata = {
   title: 'FitWise - Łatwe zarządzanie obiektami sportowymi',
@@ -17,6 +18,7 @@ export default function RootLayout({
       <body>
         {children}
         <Cookies />
+        <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
       </body>
     </html>
   );
