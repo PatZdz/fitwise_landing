@@ -11,7 +11,8 @@ export async function POST(request: Request) {
     });
 
     return NextResponse.json({ success: true });
-  } catch (error) {
+  } catch (err) {
+    console.error('Wishlist error:', err);
     return NextResponse.json({ error: 'Błąd podczas zapisywania' }, { status: 500 });
   }
 }
