@@ -70,7 +70,6 @@ export default function Hero() {
         </h1>
         <p className="text-lg text-gray-600 max-w-xl mx-auto mb-8">
           FitWise to nowoczesna aplikacja SaaS do zarządzania obiektami sportowymi.
-          Z łatwością zarządzaj rezerwacjami, członkostwami, raportami i automatyzacją.
         </p>
 
         {showSuccess && (
