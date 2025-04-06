@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import React from "react";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 
@@ -111,15 +111,14 @@ const sections = [
   }
 ];
 
-export default function Page() {
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
-  return (
-    <>
-      <Navbar isDrawerOpen={isDrawerOpen} setIsDrawerOpen={setIsDrawerOpen} />
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+  export default function Page() {
+  // Usunięcie nieużywanych zmiennych
+    return (
+      <>
+        <Navbar />
+        <section className="py-24 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
             <h1 className="text-4xl font-bold text-gray-900 mb-8 text-center">Polityka Prywatności FitWise</h1>
 
             {sections.map((section, index) => (
