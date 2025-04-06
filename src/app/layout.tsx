@@ -1,11 +1,13 @@
 import './globals.css'
 import { Metadata } from 'next';
 import Cookies from './components/Cookies';
-import Script from 'next/script'
 
 export const metadata: Metadata = {
   title: 'FitWise - Łatwe zarządzanie obiektami sportowymi',
-  description: 'Osiągnij swoje cele fitness z FitWise.',
+  description: 'Osiągnij swoje obiekty fitness z FitWise.',
+  icons: {
+    icon: './favicon.ico',
+  },
 };
 
 export default function RootLayout({
@@ -15,10 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pl">
-      <body>
+      <body suppressHydrationWarning={true}>
         {children}
         <Cookies />
-        <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
       </body>
     </html>
   );

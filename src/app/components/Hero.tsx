@@ -31,12 +31,16 @@ export default function Hero() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await fetch('/api/wishlist', {
+      // Tworzenie URL do formularza Google Forms z parametrem email
+      const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSeL_I99JdC8iVoGIdW8HlRFHFZk9_Ru9Ac1YU7xBwMIs-ezDA/formResponse";
+      const formData = new FormData();
+      formData.append("entry.879525959", email);
+      
+      // Wysyłanie danych do Google Forms
+      await fetch(googleFormUrl, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }),
+        mode: 'no-cors', // Google Forms wymaga no-cors
+        body: formData
       });
       
       setEmail("");
@@ -95,7 +99,7 @@ export default function Hero() {
               type="submit"
               className="px-6 py-3 bg-primary text-white rounded-md font-semibold hover:bg-primary/90 transition whitespace-nowrap"
             >
-              Zapisz się na wishlistę
+              Zapisz się na waitlistę
             </button>
           </div>
 
@@ -115,20 +119,7 @@ export default function Hero() {
         </form>
       </div>
 
-      <div className="bg-white w-full max-w-5xl mx-auto rounded-lg shadow-lg relative p-6 md:p-8 mt-16">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-center gap-4 md:gap-0 mb-8">
-          <span className="text-2xl font-bold text-gray-700 text-center w-full">Wszystko w jednym miejscu</span>
-        </div>
-        <div className="w-full h-auto">
-          <Image
-            src="/dashboard.svg"
-            alt="Zrzut ekranu z aplikacji FitWise"
-            width={1200}
-            height={675}
-            className="w-full h-auto"
-          />
-        </div>
-      </div>
+
     </section>
   );
 }
